@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy · Dampers</title>
+<meta name="description" content="Informativa sulla privacy di Dampers. Nessun dato raccolto.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0B1020;
+    --ink-soft:#161C31;
+    --slate:#8A93AD;
+    --paper:#E8EBF2;
+    --signal:#4C7DFF;
+    --line:rgba(138,147,173,.22);
+    --measure:34rem;
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    margin:0;
+    background:var(--ink);
+    color:var(--paper);
+    font-family:"Inter",system-ui,-apple-system,sans-serif;
+    font-size:17px;
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:var(--measure);margin:0 auto;padding:0 1.5rem 6rem}
+
+  /* ── Hero: the signature. A waveform that damps to silence. ── */
+  header{padding:5.5rem 0 3rem}
+  .mark{
+    display:block;width:100%;height:86px;overflow:visible;margin-bottom:2.5rem;
+  }
+  .mark path{
+    fill:none;stroke:var(--signal);stroke-width:2;stroke-linecap:round;
+    stroke-dasharray:1200;stroke-dashoffset:1200;
+    animation:draw 2.2s cubic-bezier(.16,.8,.3,1) forwards;
+  }
+  @keyframes draw{to{stroke-dashoffset:0}}
+  @media (prefers-reduced-motion:reduce){
+    .mark path{animation:none;stroke-dashoffset:0}
+  }
+
+  .eyebrow{
+    font-family:"IBM Plex Mono",ui-monospace,monospace;
+    font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;
+    color:var(--slate);margin:0 0 .9rem;
+  }
+  h1{
+    font-family:"Fraunces",Georgia,serif;
+    font-weight:600;font-size:clamp(2.1rem,7vw,3rem);
+    line-height:1.08;letter-spacing:-.02em;margin:0 0 1.1rem;
+  }
+  .lede{color:var(--slate);font-size:1.06rem;margin:0}
+
+  /* ── Sections ── */
+  section{border-top:1px solid var(--line);padding:2.6rem 0 0;margin-top:2.6rem}
+  h2{
+    font-family:"Fraunces",Georgia,serif;
+    font-weight:600;font-size:1.32rem;letter-spacing:-.01em;
+    margin:0 0 .8rem;
+  }
+  p{margin:0 0 1rem}
+  a{color:var(--signal);text-decoration-thickness:1px;text-underline-offset:3px}
+  a:focus-visible{outline:2px solid var(--signal);outline-offset:3px;border-radius:2px}
+
+  /* Statement block: the one claim that matters */
+  .statement{
+    background:var(--ink-soft);
+    border-left:2px solid var(--signal);
+    padding:1.4rem 1.5rem;border-radius:0 6px 6px 0;
+    margin:0 0 1.4rem;
+  }
+  .statement p{margin:0;font-size:1.02rem}
+
+  ul{margin:0 0 1rem;padding-left:1.1rem}
+  li{margin-bottom:.5rem}
+
+  footer{
+    border-top:1px solid var(--line);margin-top:3.4rem;padding-top:1.6rem;
+    font-family:"IBM Plex Mono",ui-monospace,monospace;
+    font-size:.78rem;color:var(--slate);
+    display:flex;flex-wrap:wrap;gap:.4rem 1.4rem;
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <svg class="mark" viewBox="0 0 600 86" aria-hidden="true" preserveAspectRatio="none">
+      <path d="M0,43 C15,43 20,4 30,4 C40,4 45,82 55,82 C65,82 70,4 80,4 C90,4 95,82 105,82
+               C115,82 120,7 130,7 C140,7 145,79 155,79 C165,79 170,12 180,12
+               C190,12 195,74 205,74 C215,74 220,18 230,18 C240,18 245,68 255,68
+               C265,68 270,25 280,25 C290,25 295,61 305,61 C315,61 320,31 330,31
+               C340,31 345,55 355,55 C365,55 370,36 380,36 C390,36 395,50 405,50
+               C415,50 420,40 430,40 C440,40 445,46 455,46 C465,46 470,42 480,42
+               C490,42 495,44 505,44 C515,44 520,43 530,43 L600,43"/>
+    </svg>
+
+    <p class="eyebrow">Dampers · Informativa privacy</p>
+    <h1>Non raccogliamo<br>i tuoi dati.</h1>
+    <p class="lede">Nessun account, nessuna analitica, nessun server. Questa pagina spiega cosa significa nel dettaglio.</p>
+  </header>
+
+  <section>
+    <h2>Dati raccolti</h2>
+    <div class="statement">
+      <p>Dampers non raccoglie, trasmette o condivide alcun dato personale.</p>
+    </div>
+    <p>L'app non richiede la creazione di un account, non integra strumenti di analisi o pubblicità, e non comunica con server esterni. Non esiste un'infrastruttura in grado di ricevere dati da questa app.</p>
+  </section>
+
+  <section>
+    <h2>Dati che restano sul dispositivo</h2>
+    <p>Alcune informazioni vengono salvate localmente sul tuo iPhone perché l'app funzioni:</p>
+    <ul>
+      <li>Le tue preferenze, come la durata impostata e il contenuto selezionato.</li>
+      <li>I file audio che scegli di importare e l'ordine in cui li organizzi.</li>
+    </ul>
+    <p>Questi dati non lasciano mai il dispositivo e vengono rimossi quando disinstalli l'app.</p>
+  </section>
+
+  <section>
+    <h2>Accesso ai file audio</h2>
+    <p>Quando importi un file, iOS ti chiede il permesso e Dampers riceve solo il file che hai selezionato. L'app non accede al resto della tua libreria e non legge i contenuti riprodotti da altre applicazioni.</p>
+  </section>
+
+  <section>
+    <h2>Servizi di terze parti</h2>
+    <p>Nessuno. Dampers non include SDK di terze parti per analisi, pubblicità o tracciamento.</p>
+  </section>
+
+  <section>
+    <h2>Minori</h2>
+    <p>Dampers è adatto a qualsiasi età. Poiché non raccoglie dati, non tratta informazioni relative a minori.</p>
+  </section>
+
+  <section>
+    <h2>Modifiche</h2>
+    <p>Se questa informativa cambierà, la versione aggiornata sarà pubblicata su questa pagina con una nuova data di revisione.</p>
+  </section>
+
+  <section>
+    <h2>Contatti</h2>
+    <p>Per domande su questa informativa o sull'app, scrivi a <a href="mailto:INSERISCI@LATUAMAIL.COM">INSERISCI@LATUAMAIL.COM</a>.</p>
+  </section>
+
+  <footer>
+    <span>Ultimo aggiornamento: 21 agosto 2026</span>
+    <span>Dampers per iOS</span>
+  </footer>
+
+</div>
+</body>
+</html>
