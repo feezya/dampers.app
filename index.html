@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Privacy · Dampers</title>
-<meta name="description" content="Informativa sulla privacy di Dampers. Nessun dato raccolto.">
+<title>Assistenza · Dampers</title>
+<meta name="description" content="Assistenza e informativa privacy di Dampers. Nessun dato raccolto.">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -176,6 +176,41 @@
     border-radius:2px;
   }
 
+  /* Divider that separates support from privacy without a hard break */
+
+  .part{
+    font-family:"IBM Plex Mono",ui-monospace,monospace;
+    font-size:.72rem;
+    letter-spacing:.16em;
+    text-transform:uppercase;
+    color:var(--slate);
+    margin:3.4rem 0 0;
+  }
+
+  /* Question / answer */
+
+  .qa{
+    margin:0 0 1.7rem;
+  }
+
+  .qa:last-child{
+    margin-bottom:0;
+  }
+
+  .qa h3{
+    font-family:"Inter",system-ui,sans-serif;
+    font-weight:500;
+    font-size:1rem;
+    margin:0 0 .35rem;
+    color:var(--paper);
+  }
+
+  .qa p{
+    margin:0;
+    color:var(--slate);
+    font-size:.97rem;
+  }
+
   /* Statement block */
 
   .statement{
@@ -235,7 +270,7 @@
 
   <!-- Language selector -->
   <div class="language-bar">
-    <label for="languageSelect" class="sr-only" style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;">
+    <label for="languageSelect" style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;">
       Language
     </label>
 
@@ -262,21 +297,110 @@
     </svg>
 
     <p class="eyebrow" data-i18n="eyebrow">
-      Dampers · Informativa privacy
+      Dampers · Assistenza e privacy
     </p>
 
     <h1 data-i18n="title">
-      Non raccogliamo<br>i tuoi dati.
+      Come funziona,<br>e cosa non facciamo.
     </h1>
 
     <p class="lede" data-i18n="lede">
-      Nessun account, nessuna analitica, nessun server.
-      Questa pagina spiega cosa significa nel dettaglio.
+      Le domande più frequenti, come scriverci, e l'informativa privacy:
+      nessun account, nessuna analitica, nessun server.
     </p>
 
   </header>
 
+  <!-- ────────────── ASSISTENZA ────────────── -->
+
+  <section id="assistenza">
+    <h2 data-i18n="whatTitle">Cos'è Dampers</h2>
+
+    <p data-i18n="whatText">
+      Quando parte qualcosa che non vuoi sentire, premi un tasto: Dampers abbassa
+      l'audio in corso e ci mette sopra un suono tuo, poi sfuma da solo.
+      Funziona su qualsiasi cosa stia suonando sul telefono.
+    </p>
+  </section>
+
   <section>
+    <h2 data-i18n="faqTitle">Domande frequenti</h2>
+
+    <div class="qa">
+      <h3 data-i18n="q1">Come la faccio partire senza aprire l'app?</h3>
+      <p data-i18n="a1">
+        Con il Tasto Azione o con un doppio tocco sul retro dell'iPhone.
+        Prima però devi creare un comando rapido: apri l'app Comandi Rapidi,
+        tocca +, aggiungi l'azione di Dampers e salvala. Solo dopo comparirà
+        negli elenchi delle Impostazioni.
+      </p>
+    </div>
+
+    <div class="qa">
+      <h3 data-i18n="q2">Quali file posso caricare?</h3>
+      <p data-i18n="a2">
+        mp3, m4a, wav e aiff. I brani scaricati dai servizi in abbonamento
+        non si possono importare: sono protetti e nessuna app di terze parti
+        può riprodurli.
+      </p>
+    </div>
+
+    <div class="qa">
+      <h3 data-i18n="q3">Ho scelto un file ma non viene importato.</h3>
+      <p data-i18n="a3">
+        Se si trova su iCloud Drive e non è ancora scaricato sul telefono,
+        l'importazione fallisce. Aprilo una volta nell'app File, aspetta che
+        finisca di scaricarsi, e riprova.
+      </p>
+    </div>
+
+    <div class="qa">
+      <h3 data-i18n="q4">Sento ancora l'audio di sotto.</h3>
+      <p data-i18n="a4">
+        È previsto: iOS permette di attenuare l'audio delle altre app, non di
+        silenziarlo. Per coprire meglio una voce usa i suoni pronti a banda
+        larga, come il rumore rosa: mascherano molto più della musica.
+      </p>
+    </div>
+
+    <div class="qa">
+      <h3 data-i18n="q5">Consuma batteria?</h3>
+      <p data-i18n="a5">
+        Mentre è pronta a intervenire, sì, un po'. Per questo si spegne da sola
+        dopo qualche minuto in cui non sente più nulla in riproduzione.
+      </p>
+    </div>
+
+    <div class="qa">
+      <h3 data-i18n="q6">Funziona in auto o con le cuffie?</h3>
+      <p data-i18n="a6">
+        Sì. Con le cuffie il gesto più comodo è il doppio tocco sul retro.
+        In auto conviene la voce, che funziona anche via CarPlay.
+      </p>
+    </div>
+  </section>
+
+  <section>
+    <h2 data-i18n="contactTitle">Contatti</h2>
+
+    <p>
+      <span data-i18n="contactText">
+        Per assistenza, segnalazioni o domande sull'app, scrivi a
+      </span>
+      <a href="mailto:dampers.privacy@gmail.com">
+        dampers.privacy@gmail.com
+      </a>.
+      <span data-i18n="contactReply">
+        Rispondiamo di solito entro pochi giorni.
+      </span>
+    </p>
+  </section>
+
+  <!-- ────────────── PRIVACY ────────────── -->
+
+  <p class="part" data-i18n="partPrivacy">Informativa privacy</p>
+
+  <section id="privacy">
     <h2 data-i18n="dataTitle">Dati raccolti</h2>
 
     <div class="statement">
@@ -349,22 +473,9 @@
     </p>
   </section>
 
-  <section>
-    <h2 data-i18n="contactTitle">Contatti</h2>
-
-    <p>
-      <span data-i18n="contactText">
-        Per domande su questa informativa o sull'app, scrivi a
-      </span>
-      <a href="mailto:dampers.privacy@gmail.com">
-        dampers.privacy@gmail.com
-      </a>.
-    </p>
-  </section>
-
   <footer>
     <span data-i18n="updated">
-      Ultimo aggiornamento: 21 agosto 2026
+      Ultimo aggiornamento: 24 agosto 2026
     </span>
 
     <span data-i18n="platform">
@@ -383,9 +494,32 @@
     ───────────────────────────────────────────── */
 
     it: {
-      eyebrow: "Dampers · Informativa privacy",
-      title: "Non raccogliamo<br>i tuoi dati.",
-      lede: "Nessun account, nessuna analitica, nessun server. Questa pagina spiega cosa significa nel dettaglio.",
+      eyebrow: "Dampers · Assistenza e privacy",
+      title: "Come funziona,<br>e cosa non facciamo.",
+      lede: "Le domande più frequenti, come scriverci, e l'informativa privacy: nessun account, nessuna analitica, nessun server.",
+
+      whatTitle: "Cos'è Dampers",
+      whatText: "Quando parte qualcosa che non vuoi sentire, premi un tasto: Dampers abbassa l'audio in corso e ci mette sopra un suono tuo, poi sfuma da solo. Funziona su qualsiasi cosa stia suonando sul telefono.",
+
+      faqTitle: "Domande frequenti",
+      q1: "Come la faccio partire senza aprire l'app?",
+      a1: "Con il Tasto Azione o con un doppio tocco sul retro dell'iPhone. Prima però devi creare un comando rapido: apri l'app Comandi Rapidi, tocca +, aggiungi l'azione di Dampers e salvala. Solo dopo comparirà negli elenchi delle Impostazioni.",
+      q2: "Quali file posso caricare?",
+      a2: "mp3, m4a, wav e aiff. I brani scaricati dai servizi in abbonamento non si possono importare: sono protetti e nessuna app di terze parti può riprodurli.",
+      q3: "Ho scelto un file ma non viene importato.",
+      a3: "Se si trova su iCloud Drive e non è ancora scaricato sul telefono, l'importazione fallisce. Aprilo una volta nell'app File, aspetta che finisca di scaricarsi, e riprova.",
+      q4: "Sento ancora l'audio di sotto.",
+      a4: "È previsto: iOS permette di attenuare l'audio delle altre app, non di silenziarlo. Per coprire meglio una voce usa i suoni pronti a banda larga, come il rumore rosa: mascherano molto più della musica.",
+      q5: "Consuma batteria?",
+      a5: "Mentre è pronta a intervenire, sì, un po'. Per questo si spegne da sola dopo qualche minuto in cui non sente più nulla in riproduzione.",
+      q6: "Funziona in auto o con le cuffie?",
+      a6: "Sì. Con le cuffie il gesto più comodo è il doppio tocco sul retro. In auto conviene la voce, che funziona anche via CarPlay.",
+
+      contactTitle: "Contatti",
+      contactText: "Per assistenza, segnalazioni o domande sull'app, scrivi a",
+      contactReply: "Rispondiamo di solito entro pochi giorni.",
+
+      partPrivacy: "Informativa privacy",
 
       dataTitle: "Dati raccolti",
       dataStatement: "Dampers non raccoglie, trasmette o condivide alcun dato personale.",
@@ -409,14 +543,11 @@
       changesTitle: "Modifiche",
       changesText: "Se questa informativa cambierà, la versione aggiornata sarà pubblicata su questa pagina con una nuova data di revisione.",
 
-      contactTitle: "Contatti",
-      contactText: "Per domande su questa informativa o sull'app, scrivi a",
-
-      updated: "Ultimo aggiornamento: 21 agosto 2026",
+      updated: "Ultimo aggiornamento: 24 agosto 2026",
       platform: "Dampers per iOS",
 
-      pageTitle: "Privacy · Dampers",
-      description: "Informativa sulla privacy di Dampers. Nessun dato raccolto."
+      pageTitle: "Assistenza · Dampers",
+      description: "Assistenza e informativa privacy di Dampers. Nessun dato raccolto."
     },
 
 
@@ -425,9 +556,32 @@
     ───────────────────────────────────────────── */
 
     en: {
-      eyebrow: "Dampers · Privacy Policy",
-      title: "We don't collect<br>your data.",
-      lede: "No account, no analytics, no servers. This page explains exactly what that means.",
+      eyebrow: "Dampers · Support & Privacy",
+      title: "How it works,<br>and what we don't do.",
+      lede: "Common questions, how to reach us, and the privacy policy: no account, no analytics, no servers.",
+
+      whatTitle: "What Dampers is",
+      whatText: "When something you'd rather not hear starts playing, press a button: Dampers lowers the current audio and plays a sound of yours over it, then fades out. It works over anything playing on your phone.",
+
+      faqTitle: "Frequently asked questions",
+      q1: "How do I start it without opening the app?",
+      a1: "With the Action button or a double tap on the back of your iPhone. First you need to create a shortcut: open the Shortcuts app, tap +, add the Dampers action and save it. Only then will it appear in the Settings lists.",
+      q2: "Which files can I load?",
+      a2: "mp3, m4a, wav and aiff. Tracks downloaded from subscription services can't be imported: they're protected and no third-party app can play them.",
+      q3: "I picked a file but it won't import.",
+      a3: "If it's in iCloud Drive and hasn't downloaded to your phone yet, the import fails. Open it once in the Files app, wait for it to finish downloading, then try again.",
+      q4: "I can still hear the audio underneath.",
+      a4: "That's expected: iOS lets an app lower other apps' audio, not silence it. To mask a voice better, use the built-in broadband sounds such as pink noise — they cover far more than music does.",
+      q5: "Does it drain the battery?",
+      a5: "While it's standing by, a little. That's why it switches itself off after a few minutes with nothing playing.",
+      q6: "Does it work in the car or with headphones?",
+      a6: "Yes. With headphones the handiest gesture is the double tap on the back. In the car, voice is better — it works through CarPlay too.",
+
+      contactTitle: "Contact",
+      contactText: "For support, bug reports or questions about the app, write to",
+      contactReply: "We usually reply within a few days.",
+
+      partPrivacy: "Privacy policy",
 
       dataTitle: "Data collected",
       dataStatement: "Dampers does not collect, transmit, or share any personal data.",
@@ -451,14 +605,11 @@
       changesTitle: "Changes",
       changesText: "If this privacy policy changes, the updated version will be published on this page with a new revision date.",
 
-      contactTitle: "Contact",
-      contactText: "For questions about this privacy policy or the app, write to",
-
-      updated: "Last updated: August 21, 2026",
+      updated: "Last updated: August 24, 2026",
       platform: "Dampers for iOS",
 
-      pageTitle: "Privacy · Dampers",
-      description: "Dampers privacy policy. No data collected."
+      pageTitle: "Support · Dampers",
+      description: "Dampers support and privacy policy. No data collected."
     },
 
 
@@ -467,9 +618,32 @@
     ───────────────────────────────────────────── */
 
     de: {
-      eyebrow: "Dampers · Datenschutzerklärung",
-      title: "Wir sammeln<br>keine Daten.",
-      lede: "Kein Konto, keine Analyse, keine Server. Auf dieser Seite erklären wir genau, was das bedeutet.",
+      eyebrow: "Dampers · Support & Datenschutz",
+      title: "Wie es funktioniert,<br>und was wir nicht tun.",
+      lede: "Häufige Fragen, wie du uns erreichst, und die Datenschutzerklärung: kein Konto, keine Analyse, keine Server.",
+
+      whatTitle: "Was Dampers ist",
+      whatText: "Wenn etwas läuft, das du nicht hören willst, drückst du eine Taste: Dampers senkt den laufenden Ton und legt einen eigenen Klang darüber, der danach ausblendet. Das klappt über allem, was auf dem Telefon spielt.",
+
+      faqTitle: "Häufige Fragen",
+      q1: "Wie starte ich es, ohne die App zu öffnen?",
+      a1: "Mit der Action Taste oder zweimal Tippen auf die Rückseite des iPhones. Vorher musst du einen Kurzbefehl anlegen: Kurzbefehle-App öffnen, auf + tippen, die Dampers-Aktion hinzufügen und sichern. Erst danach erscheint sie in den Listen der Einstellungen.",
+      q2: "Welche Dateien kann ich laden?",
+      a2: "mp3, m4a, wav und aiff. Titel aus Abo-Diensten lassen sich nicht importieren: sie sind geschützt, und keine Drittanbieter-App kann sie abspielen.",
+      q3: "Ich habe eine Datei gewählt, aber sie wird nicht importiert.",
+      a3: "Liegt sie in iCloud Drive und ist noch nicht aufs Telefon geladen, schlägt der Import fehl. Öffne sie einmal in der Dateien-App, warte bis sie geladen ist, und versuch es erneut.",
+      q4: "Ich höre den Ton darunter immer noch.",
+      a4: "Das ist so vorgesehen: iOS erlaubt es, den Ton anderer Apps zu senken, nicht ihn stummzuschalten. Um eine Stimme besser zu überdecken, nimm die eingebauten Breitbandklänge wie rosa Rauschen — sie überdecken weit mehr als Musik.",
+      q5: "Verbraucht es Akku?",
+      a5: "Solange es bereitsteht, ein wenig. Deshalb schaltet es sich nach ein paar Minuten ohne laufenden Ton von selbst ab.",
+      q6: "Funktioniert es im Auto oder mit Kopfhörern?",
+      a6: "Ja. Mit Kopfhörern ist das Tippen auf die Rückseite am bequemsten. Im Auto ist die Sprache besser — sie klappt auch über CarPlay.",
+
+      contactTitle: "Kontakt",
+      contactText: "Für Support, Fehlermeldungen oder Fragen zur App schreibe an",
+      contactReply: "Wir antworten meist innerhalb weniger Tage.",
+
+      partPrivacy: "Datenschutzerklärung",
 
       dataTitle: "Erhobene Daten",
       dataStatement: "Dampers erhebt, überträgt oder teilt keine personenbezogenen Daten.",
@@ -493,14 +667,11 @@
       changesTitle: "Änderungen",
       changesText: "Falls sich diese Datenschutzerklärung ändert, wird die aktualisierte Version auf dieser Seite mit einem neuen Aktualisierungsdatum veröffentlicht.",
 
-      contactTitle: "Kontakt",
-      contactText: "Bei Fragen zu dieser Datenschutzerklärung oder zur App schreibe an",
-
-      updated: "Letzte Aktualisierung: 21. August 2026",
+      updated: "Letzte Aktualisierung: 24. August 2026",
       platform: "Dampers für iOS",
 
-      pageTitle: "Datenschutz · Dampers",
-      description: "Datenschutzerklärung von Dampers. Keine Daten werden erhoben."
+      pageTitle: "Support · Dampers",
+      description: "Support und Datenschutzerklärung von Dampers. Keine Daten werden erhoben."
     },
 
 
@@ -509,9 +680,32 @@
     ───────────────────────────────────────────── */
 
     fr: {
-      eyebrow: "Dampers · Politique de confidentialité",
-      title: "Nous ne collectons<br>aucune donnée.",
-      lede: "Aucun compte, aucune analyse, aucun serveur. Cette page explique précisément ce que cela signifie.",
+      eyebrow: "Dampers · Assistance et confidentialité",
+      title: "Comment ça marche,<br>et ce qu'on ne fait pas.",
+      lede: "Les questions fréquentes, comment nous écrire, et la politique de confidentialité : aucun compte, aucune analyse, aucun serveur.",
+
+      whatTitle: "Ce qu'est Dampers",
+      whatText: "Quand démarre quelque chose que tu ne veux pas entendre, tu appuies sur une touche : Dampers baisse l'audio en cours et pose l'un de tes sons par-dessus, puis s'arrête tout seul. Ça marche sur n'importe quoi qui joue sur le téléphone.",
+
+      faqTitle: "Questions fréquentes",
+      q1: "Comment la lancer sans ouvrir l'app ?",
+      a1: "Avec le bouton Action ou deux tapes au dos de l'iPhone. Mais il faut d'abord créer un raccourci : ouvre l'app Raccourcis, touche +, ajoute l'action de Dampers et enregistre-la. Elle n'apparaîtra dans les listes des Réglages qu'ensuite.",
+      q2: "Quels fichiers puis-je charger ?",
+      a2: "mp3, m4a, wav et aiff. Les morceaux téléchargés depuis les services par abonnement ne peuvent pas être importés : ils sont protégés et aucune app tierce ne peut les lire.",
+      q3: "J'ai choisi un fichier mais il ne s'importe pas.",
+      a3: "S'il est sur iCloud Drive et pas encore téléchargé sur le téléphone, l'import échoue. Ouvre-le une fois dans l'app Fichiers, attends la fin du téléchargement, puis réessaie.",
+      q4: "J'entends encore l'audio en dessous.",
+      a4: "C'est prévu : iOS permet d'atténuer l'audio des autres apps, pas de le couper. Pour mieux couvrir une voix, utilise les sons intégrés à large bande comme le bruit rose — ils masquent bien plus que la musique.",
+      q5: "Est-ce que ça consomme de la batterie ?",
+      a5: "Tant qu'elle reste prête, un peu. C'est pour ça qu'elle s'éteint seule après quelques minutes sans rien qui joue.",
+      q6: "Ça marche en voiture ou avec un casque ?",
+      a6: "Oui. Avec un casque, le geste le plus pratique est la double tape au dos. En voiture, mieux vaut la voix — elle fonctionne aussi via CarPlay.",
+
+      contactTitle: "Contact",
+      contactText: "Pour de l'aide, un signalement ou une question sur l'app, écris à",
+      contactReply: "Nous répondons en général sous quelques jours.",
+
+      partPrivacy: "Politique de confidentialité",
 
       dataTitle: "Données collectées",
       dataStatement: "Dampers ne collecte, ne transmet et ne partage aucune donnée personnelle.",
@@ -535,14 +729,11 @@
       changesTitle: "Modifications",
       changesText: "Si cette politique de confidentialité est modifiée, la version mise à jour sera publiée sur cette page avec une nouvelle date de révision.",
 
-      contactTitle: "Contact",
-      contactText: "Pour toute question concernant cette politique de confidentialité ou l'application, écrivez à",
-
-      updated: "Dernière mise à jour : 21 août 2026",
+      updated: "Dernière mise à jour : 24 août 2026",
       platform: "Dampers pour iOS",
 
-      pageTitle: "Confidentialité · Dampers",
-      description: "Politique de confidentialité de Dampers. Aucune donnée collectée."
+      pageTitle: "Assistance · Dampers",
+      description: "Assistance et politique de confidentialité de Dampers. Aucune donnée collectée."
     },
 
 
@@ -551,9 +742,32 @@
     ───────────────────────────────────────────── */
 
     es: {
-      eyebrow: "Dampers · Política de privacidad",
-      title: "No recopilamos<br>tus datos.",
-      lede: "Sin cuenta, sin analíticas, sin servidores. Esta página explica exactamente qué significa.",
+      eyebrow: "Dampers · Soporte y privacidad",
+      title: "Cómo funciona,<br>y qué no hacemos.",
+      lede: "Las preguntas más frecuentes, cómo escribirnos y la política de privacidad: sin cuenta, sin analíticas, sin servidores.",
+
+      whatTitle: "Qué es Dampers",
+      whatText: "Cuando empieza algo que no quieres oír, pulsas un botón: Dampers baja el audio en curso y pone encima un sonido tuyo, y luego se apaga solo. Funciona sobre cualquier cosa que esté sonando en el teléfono.",
+
+      faqTitle: "Preguntas frecuentes",
+      q1: "¿Cómo la lanzo sin abrir la app?",
+      a1: "Con el botón de acción o con un doble toque en la parte trasera del iPhone. Antes tienes que crear un atajo: abre la app Atajos, toca +, añade la acción de Dampers y guárdala. Solo entonces aparecerá en las listas de Ajustes.",
+      q2: "¿Qué archivos puedo cargar?",
+      a2: "mp3, m4a, wav y aiff. Las canciones descargadas de servicios de suscripción no se pueden importar: están protegidas y ninguna app de terceros puede reproducirlas.",
+      q3: "He elegido un archivo pero no se importa.",
+      a3: "Si está en iCloud Drive y aún no se ha descargado al teléfono, la importación falla. Ábrelo una vez en la app Archivos, espera a que termine de descargarse y vuelve a intentarlo.",
+      q4: "Sigo oyendo el audio de debajo.",
+      a4: "Es lo previsto: iOS permite atenuar el audio de otras apps, no silenciarlo. Para tapar mejor una voz usa los sonidos integrados de banda ancha, como el ruido rosa: enmascaran mucho más que la música.",
+      q5: "¿Consume batería?",
+      a5: "Mientras está lista para actuar, un poco. Por eso se apaga sola tras unos minutos sin nada en reproducción.",
+      q6: "¿Funciona en el coche o con auriculares?",
+      a6: "Sí. Con auriculares el gesto más cómodo es el doble toque en la parte trasera. En el coche es mejor la voz, que también funciona con CarPlay.",
+
+      contactTitle: "Contacto",
+      contactText: "Para soporte, incidencias o dudas sobre la app, escribe a",
+      contactReply: "Solemos responder en pocos días.",
+
+      partPrivacy: "Política de privacidad",
 
       dataTitle: "Datos recopilados",
       dataStatement: "Dampers no recopila, transmite ni comparte ningún dato personal.",
@@ -577,14 +791,11 @@
       changesTitle: "Cambios",
       changesText: "Si esta política de privacidad cambia, la versión actualizada se publicará en esta página con una nueva fecha de revisión.",
 
-      contactTitle: "Contacto",
-      contactText: "Si tienes preguntas sobre esta política de privacidad o sobre la aplicación, escribe a",
-
-      updated: "Última actualización: 21 de agosto de 2026",
+      updated: "Última actualización: 24 de agosto de 2026",
       platform: "Dampers para iOS",
 
-      pageTitle: "Privacidad · Dampers",
-      description: "Política de privacidad de Dampers. No se recopilan datos."
+      pageTitle: "Soporte · Dampers",
+      description: "Soporte y política de privacidad de Dampers. No se recopilan datos."
     },
 
 
@@ -593,9 +804,32 @@
     ───────────────────────────────────────────── */
 
     pt: {
-      eyebrow: "Dampers · Política de privacidade",
-      title: "Não recolhemos<br>os seus dados.",
-      lede: "Sem conta, sem análises, sem servidores. Esta página explica exatamente o que isso significa.",
+      eyebrow: "Dampers · Apoio e privacidade",
+      title: "Como funciona,<br>e o que não fazemos.",
+      lede: "As perguntas mais frequentes, como contactar-nos, e a política de privacidade: sem conta, sem análises, sem servidores.",
+
+      whatTitle: "O que é a Dampers",
+      whatText: "Quando começa algo que não queres ouvir, carregas num botão: a Dampers baixa o áudio em curso e põe por cima um som teu, e depois desvanece sozinha. Funciona sobre qualquer coisa que esteja a tocar no telemóvel.",
+
+      faqTitle: "Perguntas frequentes",
+      q1: "Como a ponho a funcionar sem abrir a app?",
+      a1: "Com o botão de ação ou com um toque duplo nas costas do iPhone. Antes tens de criar um atalho: abre a app Atalhos, toca em +, adiciona a ação da Dampers e guarda. Só depois aparecerá nas listas das Definições.",
+      q2: "Que ficheiros posso carregar?",
+      a2: "mp3, m4a, wav e aiff. As faixas descarregadas de serviços por subscrição não podem ser importadas: estão protegidas e nenhuma app de terceiros as consegue reproduzir.",
+      q3: "Escolhi um ficheiro mas não é importado.",
+      a3: "Se está no iCloud Drive e ainda não foi descarregado para o telemóvel, a importação falha. Abre-o uma vez na app Ficheiros, espera que termine de descarregar e tenta de novo.",
+      q4: "Continuo a ouvir o áudio por baixo.",
+      a4: "É esperado: o iOS permite atenuar o áudio das outras apps, não silenciá-lo. Para tapar melhor uma voz usa os sons prontos de banda larga, como o ruído rosa: mascaram muito mais do que a música.",
+      q5: "Gasta bateria?",
+      a5: "Enquanto está pronta a agir, um pouco. Por isso desliga-se sozinha ao fim de alguns minutos sem nada a tocar.",
+      q6: "Funciona no carro ou com auscultadores?",
+      a6: "Sim. Com auscultadores o gesto mais prático é o toque duplo nas costas. No carro é melhor a voz, que também funciona por CarPlay.",
+
+      contactTitle: "Contacto",
+      contactText: "Para apoio, comunicação de problemas ou dúvidas sobre a app, escreve para",
+      contactReply: "Costumamos responder em poucos dias.",
+
+      partPrivacy: "Política de privacidade",
 
       dataTitle: "Dados recolhidos",
       dataStatement: "A Dampers não recolhe, transmite nem partilha quaisquer dados pessoais.",
@@ -619,14 +853,11 @@
       changesTitle: "Alterações",
       changesText: "Se esta política de privacidade for alterada, a versão atualizada será publicada nesta página com uma nova data de revisão.",
 
-      contactTitle: "Contacto",
-      contactText: "Para questões sobre esta política de privacidade ou sobre a aplicação, escreva para",
-
-      updated: "Última atualização: 21 de agosto de 2026",
+      updated: "Última atualização: 24 de agosto de 2026",
       platform: "Dampers para iOS",
 
-      pageTitle: "Privacidade · Dampers",
-      description: "Política de privacidade da Dampers. Nenhum dado é recolhido."
+      pageTitle: "Apoio · Dampers",
+      description: "Apoio e política de privacidade da Dampers. Nenhum dado é recolhido."
     }
   };
 
