@@ -3,301 +3,24 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0A0B09">
 <title>Assistenza · Dampers</title>
-<meta name="description" content="Assistenza e informativa privacy di Dampers. Nessun dato raccolto.">
+<meta name="description" content="Assistenza di Dampers: domande frequenti e contatti.">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500&display=swap" rel="stylesheet">
-
-<style>
-  :root{
-    --ink:#0B1020;
-    --ink-soft:#161C31;
-    --slate:#8A93AD;
-    --paper:#E8EBF2;
-    --signal:#4C7DFF;
-    --line:rgba(138,147,173,.22);
-    --measure:34rem;
-  }
-
-  *{box-sizing:border-box}
-
-  html{
-    -webkit-text-size-adjust:100%;
-    scroll-behavior:smooth;
-  }
-
-  body{
-    margin:0;
-    background:var(--ink);
-    color:var(--paper);
-    font-family:"Inter",system-ui,-apple-system,sans-serif;
-    font-size:17px;
-    line-height:1.65;
-    -webkit-font-smoothing:antialiased;
-  }
-
-  .wrap{
-    max-width:var(--measure);
-    margin:0 auto;
-    padding:0 1.5rem 6rem;
-  }
-
-  /* ── Language selector ── */
-
-  .language-bar{
-    display:flex;
-    justify-content:flex-end;
-    padding-top:1.5rem;
-  }
-
-  .language-select{
-    appearance:none;
-    -webkit-appearance:none;
-    background:var(--ink-soft);
-    color:var(--paper);
-    border:1px solid var(--line);
-    border-radius:6px;
-    padding:.55rem 2.1rem .55rem .8rem;
-    font-family:"IBM Plex Mono",ui-monospace,monospace;
-    font-size:.7rem;
-    letter-spacing:.08em;
-    cursor:pointer;
-    outline:none;
-
-    background-image:
-      linear-gradient(45deg, transparent 50%, var(--slate) 50%),
-      linear-gradient(135deg, var(--slate) 50%, transparent 50%);
-    background-position:
-      calc(100% - 12px) 50%,
-      calc(100% - 8px) 50%;
-    background-size:4px 4px, 4px 4px;
-    background-repeat:no-repeat;
-  }
-
-  .language-select:hover{
-    border-color:rgba(76,125,255,.5);
-  }
-
-  .language-select:focus-visible{
-    outline:2px solid var(--signal);
-    outline-offset:2px;
-  }
-
-  /* ── Hero: the signature. A waveform that damps to silence. ── */
-
-  header{
-    padding:4rem 0 3rem;
-  }
-
-  .mark{
-    display:block;
-    width:100%;
-    height:86px;
-    overflow:visible;
-    margin-bottom:2.5rem;
-  }
-
-  .mark path{
-    fill:none;
-    stroke:var(--signal);
-    stroke-width:2;
-    stroke-linecap:round;
-    stroke-dasharray:1200;
-    stroke-dashoffset:1200;
-    animation:draw 2.2s cubic-bezier(.16,.8,.3,1) forwards;
-  }
-
-  @keyframes draw{
-    to{stroke-dashoffset:0}
-  }
-
-  @media (prefers-reduced-motion:reduce){
-    .mark path{
-      animation:none;
-      stroke-dashoffset:0;
-    }
-  }
-
-  .eyebrow{
-    font-family:"IBM Plex Mono",ui-monospace,monospace;
-    font-size:.72rem;
-    letter-spacing:.16em;
-    text-transform:uppercase;
-    color:var(--slate);
-    margin:0 0 .9rem;
-  }
-
-  h1{
-    font-family:"Fraunces",Georgia,serif;
-    font-weight:600;
-    font-size:clamp(2.1rem,7vw,3rem);
-    line-height:1.08;
-    letter-spacing:-.02em;
-    margin:0 0 1.1rem;
-  }
-
-  .lede{
-    color:var(--slate);
-    font-size:1.06rem;
-    margin:0;
-  }
-
-  /* ── Sections ── */
-
-  section{
-    border-top:1px solid var(--line);
-    padding:2.6rem 0 0;
-    margin-top:2.6rem;
-  }
-
-  h2{
-    font-family:"Fraunces",Georgia,serif;
-    font-weight:600;
-    font-size:1.32rem;
-    letter-spacing:-.01em;
-    margin:0 0 .8rem;
-  }
-
-  p{
-    margin:0 0 1rem;
-  }
-
-  a{
-    color:var(--signal);
-    text-decoration-thickness:1px;
-    text-underline-offset:3px;
-  }
-
-  a:focus-visible{
-    outline:2px solid var(--signal);
-    outline-offset:3px;
-    border-radius:2px;
-  }
-
-  /* Divider that separates support from privacy without a hard break */
-
-  .part{
-    font-family:"IBM Plex Mono",ui-monospace,monospace;
-    font-size:.72rem;
-    letter-spacing:.16em;
-    text-transform:uppercase;
-    color:var(--slate);
-    margin:3.4rem 0 0;
-  }
-
-  /* Platform badge.
-     The page serves both stores from one URL, so anything that differs
-     between iOS and Android has to say so inline. */
-
-  .tag{
-    display:inline-block;
-    font-family:"IBM Plex Mono",ui-monospace,monospace;
-    font-size:.62rem;
-    letter-spacing:.1em;
-    text-transform:uppercase;
-    color:var(--slate);
-    border:1px solid var(--line);
-    border-radius:4px;
-    padding:.1rem .4rem;
-    margin-right:.45rem;
-    vertical-align:.12em;
-  }
-
-  .tag.android{
-    color:var(--signal);
-    border-color:rgba(76,125,255,.4);
-  }
-
-  /* Question / answer */
-
-  .qa{
-    margin:0 0 1.7rem;
-  }
-
-  .qa:last-child{
-    margin-bottom:0;
-  }
-
-  .qa h3{
-    font-family:"Inter",system-ui,sans-serif;
-    font-weight:500;
-    font-size:1rem;
-    margin:0 0 .35rem;
-    color:var(--paper);
-  }
-
-  .qa p{
-    margin:0;
-    color:var(--slate);
-    font-size:.97rem;
-  }
-
-  /* Statement block */
-
-  .statement{
-    background:var(--ink-soft);
-    border-left:2px solid var(--signal);
-    padding:1.4rem 1.5rem;
-    border-radius:0 6px 6px 0;
-    margin:0 0 1.4rem;
-  }
-
-  .statement p{
-    margin:0;
-    font-size:1.02rem;
-  }
-
-  ul{
-    margin:0 0 1rem;
-    padding-left:1.1rem;
-  }
-
-  li{
-    margin-bottom:.5rem;
-  }
-
-  footer{
-    border-top:1px solid var(--line);
-    margin-top:3.4rem;
-    padding-top:1.6rem;
-    font-family:"IBM Plex Mono",ui-monospace,monospace;
-    font-size:.78rem;
-    color:var(--slate);
-    display:flex;
-    flex-wrap:wrap;
-    gap:.4rem 1.4rem;
-  }
-
-  @media(max-width:480px){
-    .wrap{
-      padding-left:1.25rem;
-      padding-right:1.25rem;
-    }
-
-    .language-bar{
-      padding-top:1.25rem;
-    }
-
-    header{
-      padding-top:3.5rem;
-    }
-  }
-</style>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,90,400;0,90,600;0,90,700;0,90,800;0,90,900;1,90,900&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="site.css">
 </head>
 
 <body>
 
 <div class="wrap">
 
-  <!-- Language selector -->
-  <div class="language-bar">
-    <label for="languageSelect" style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;">
-      Language
-    </label>
-
-    <select id="languageSelect" class="language-select" aria-label="Select language">
+  <div class="top">
+    <a class="brand" href="./"><span class="brand-mark" aria-hidden="true">D</span>Dampers</a>
+    <label for="languageSelect" class="visually-hidden">Language</label>
+    <select id="languageSelect" class="language-select">
       <option value="it">ITALIANO</option>
       <option value="en">ENGLISH</option>
       <option value="de">DEUTSCH</option>
@@ -308,7 +31,6 @@
   </div>
 
   <header>
-
     <svg class="mark" viewBox="0 0 600 86" aria-hidden="true" preserveAspectRatio="none">
       <path d="M0,43 C15,43 20,4 30,4 C40,4 45,82 55,82 C65,82 70,4 80,4 C90,4 95,82 105,82
                C115,82 120,7 130,7 C140,7 145,79 155,79 C165,79 170,12 180,12
@@ -319,31 +41,14 @@
                C490,42 495,44 505,44 C515,44 520,43 530,43 L600,43"/>
     </svg>
 
-    <p class="eyebrow" data-i18n="eyebrow">
-      Dampers · Assistenza e privacy
-    </p>
-
-    <h1 data-i18n="title">
-      Come funziona,<br>e cosa non facciamo.
-    </h1>
-
-    <p class="lede" data-i18n="lede">
-      Le domande più frequenti, come scriverci, e l'informativa privacy:
-      nessun account, nessuna analitica, nessun server.
-    </p>
-
+    <p class="eyebrow" data-i18n="eyebrow">Dampers · Assistenza</p>
+    <h1 data-i18n="title">Come funziona,<br>e come scriverci.</h1>
+    <p class="lede" data-i18n="lede">Le domande più frequenti e i contatti. Nessun account, nessuna analitica.</p>
   </header>
 
-  <!-- ────────────── ASSISTENZA ────────────── -->
-
-  <section id="assistenza">
+  <section>
     <h2 data-i18n="whatTitle">Cos'è Dampers</h2>
-
-    <p data-i18n="whatText">
-      Quando parte qualcosa che non vuoi sentire, premi un tasto: Dampers abbassa
-      l'audio in corso e ci mette sopra un suono tuo, poi sfuma da solo.
-      Funziona su qualsiasi cosa stia suonando sul telefono.
-    </p>
+    <p data-i18n="whatText">Quando parte qualcosa che non vuoi sentire, premi un tasto: Dampers abbassa l'audio in corso e ci mette sopra un suono tuo, poi sfuma da solo. Funziona su qualsiasi cosa stia suonando sul telefono.</p>
   </section>
 
   <section>
@@ -351,211 +56,83 @@
 
     <div class="qa">
       <h3><span class="tag">iOS</span><span data-i18n="q1">Come la faccio partire senza aprire l'app?</span></h3>
-      <p data-i18n="a1">
-        Con il Tasto Azione o con un doppio tocco sul retro dell'iPhone.
-      </p>
+      <p data-i18n="a1">Con il Tasto Azione o con un doppio tocco sul retro dell'iPhone. Prima però devi creare un comando rapido: apri l'app Comandi Rapidi, tocca +, aggiungi l'azione di Dampers e salvala. Solo dopo comparirà negli elenchi delle Impostazioni.</p>
     </div>
 
     <div class="qa">
       <h3><span class="tag android">Android</span><span data-i18n="q1b">Come la faccio partire senza aprire l'app?</span></h3>
-      <p data-i18n="a1b">
-        Con il riquadro nelle Impostazioni Rapide, o tenendo premuta l'icona
-        sulla schermata Home.
-      </p>
+      <p data-i18n="a1b">Con il riquadro nelle Impostazioni Rapide: apri il pannello, tocca la matita, e trascina Dampers fra i riquadri attivi. Oppure tieni premuta l'icona sulla schermata Home e scegli «Copri un rumore». Non c'è niente da configurare prima.</p>
     </div>
 
     <div class="qa">
       <h3><span class="tag android">Android</span><span data-i18n="qAuto">Può accorgersi da sola della pubblicità?</span></h3>
-      <p data-i18n="aAuto">
-        Sì, con il rilevamento automatico.
-      </p>
+      <p data-i18n="aAuto">Sì, se attivi il rilevamento automatico dalle impostazioni. Funziona con le app di musica in streaming, che dichiarano gli annunci al sistema: Dampers copre appena parte la pubblicità e si ferma quando torna la musica. Sulle app video la pubblicità non è distinguibile dal resto, quindi lì resta il tocco manuale.</p>
     </div>
 
     <div class="qa">
       <h3 data-i18n="q2">Quali file posso caricare?</h3>
-      <p data-i18n="a2">
-        mp3, m4a, wav e aiff.
-      </p>
+      <p data-i18n="a2">mp3, m4a, wav, e su Android anche ogg e flac. I brani scaricati dai servizi in abbonamento non si possono importare: sono protetti e nessuna app di terze parti può riprodurli.</p>
     </div>
 
     <div class="qa">
       <h3 data-i18n="q3">Ho scelto un file ma non viene importato.</h3>
-      <p data-i18n="a3">
-        Scaricalo prima sul telefono.
-      </p>
+      <p data-i18n="a3">Se si trova su iCloud Drive, Google Drive o un altro servizio in cloud e non è ancora scaricato sul telefono, l'importazione fallisce. Aprilo una volta nell'app dei file, aspetta che finisca di scaricarsi, e riprova.</p>
     </div>
 
     <div class="qa">
       <h3 data-i18n="q4">Sento ancora l'audio di sotto.</h3>
-      <p data-i18n="a4">
-        È previsto.
-      </p>
+      <p data-i18n="a4">È previsto: il sistema permette di attenuare l'audio delle altre app, non di silenziarlo. Per coprire meglio una voce scegli suoni continui e ricchi, come la pioggia o il ventilatore del catalogo: mascherano molto più della musica.</p>
     </div>
 
     <div class="qa">
       <h3 data-i18n="q5">Consuma batteria?</h3>
-      <p data-i18n="a5">
-        Un po'.
-      </p>
+      <p data-i18n="a5">Mentre è pronta a intervenire, sì, un po'. Per questo si spegne da sola dopo qualche minuto in cui non sente più nulla in riproduzione.</p>
     </div>
 
     <div class="qa">
       <h3 data-i18n="q6">Funziona in auto o con le cuffie?</h3>
-      <p data-i18n="a6">
-        Sì.
-      </p>
+      <p data-i18n="a6">Sì. Su iPhone, con le cuffie, il gesto più comodo è il doppio tocco sul retro. Su Android il riquadro delle Impostazioni Rapide si raggiunge anche a schermo bloccato. In auto conviene la voce.</p>
     </div>
   </section>
 
   <section>
     <h2 data-i18n="contactTitle">Contatti</h2>
-
     <p>
-      <span data-i18n="contactText">
-        Per assistenza, segnalazioni o domande sull'app, scrivi a
-      </span>
-      <a href="mailto:dampers.privacy@gmail.com">
-        dampers.privacy@gmail.com
-      </a>.
-      <span data-i18n="contactReply">
-        Rispondiamo di solito entro pochi giorni.
-      </span>
+      <span data-i18n="contactText">Per assistenza, segnalazioni o domande sull'app, scrivi a</span>
+      <a href="mailto:dampers.privacy@gmail.com">dampers.privacy@gmail.com</a>.
+      <span data-i18n="contactReply">Rispondiamo di solito entro pochi giorni.</span>
     </p>
   </section>
 
-  <!-- ────────────── PRIVACY ────────────── -->
-
-  <p class="part" data-i18n="partPrivacy">Informativa privacy</p>
-
-  <section id="privacy">
-    <h2 data-i18n="dataTitle">Dati raccolti</h2>
-
-    <div class="statement">
-      <p data-i18n="dataStatement">
-        Dampers non raccoglie, trasmette o condivide alcun dato personale.
-      </p>
+  <section>
+    <h2 data-i18n="legalTitle">Privacy e termini</h2>
+    <p data-i18n="legalText">Dampers non raccoglie dati personali. Trovi tutti i dettagli nell'informativa privacy; le condizioni d'uso e d'acquisto sono nei termini.</p>
+    <div class="links">
+      <a class="pill" href="privacy" data-i18n="navPrivacy">Privacy</a>
+      <a class="pill ghost" href="terms" data-i18n="navTerms">Termini</a>
     </div>
-
-    <p data-i18n="dataText">
-      L'app non richiede la creazione di un account, non integra strumenti di analisi
-      o pubblicità, e non comunica con server esterni.
-    </p>
-  </section>
-
-  <!--
-    SEZIONE CRITICA PER LA REVISIONE GOOGLE PLAY.
-
-    E' qui che si dichiara l'uso di BIND_NOTIFICATION_LISTENER_SERVICE.
-    Un revisore che non trova questa sezione respinge la dichiarazione del
-    permesso. Deve dire tre cose senza ambiguita': cosa leggiamo, cosa NON
-    leggiamo, e che nulla lascia il dispositivo.
-
-    Non spostarla piu' in basso e non fonderla con altre sezioni.
-  -->
-  <section id="notification-access">
-    <h2><span class="tag android">Android</span><span data-i18n="notifTitle">Accesso alle notifiche</span></h2>
-
-    <div class="statement">
-      <p data-i18n="notifStatement">
-        Dampers non legge il contenuto delle tue notifiche.
-      </p>
-    </div>
-
-    <p data-i18n="notifText1">
-      Testo segnaposto.
-    </p>
-
-    <p data-i18n="notifText2">
-      Testo segnaposto.
-    </p>
-
-    <ul>
-      <li data-i18n="notifItem1">Segnaposto</li>
-      <li data-i18n="notifItem2">Segnaposto</li>
-      <li data-i18n="notifItem3">Segnaposto</li>
-    </ul>
-
-    <p data-i18n="notifText3">
-      Testo segnaposto.
-    </p>
-  </section>
-
-  <section>
-    <h2 data-i18n="localTitle">Dati che restano sul dispositivo</h2>
-
-    <p data-i18n="localIntro">
-      Alcune informazioni vengono salvate localmente sul tuo dispositivo perché l'app funzioni:
-    </p>
-
-    <ul>
-      <li data-i18n="localItem1">
-        Le tue preferenze.
-      </li>
-      <li data-i18n="localItem2">
-        I file audio che scegli di importare.
-      </li>
-    </ul>
-
-    <p data-i18n="localOutro">
-      Questi dati non lasciano mai il dispositivo.
-    </p>
-  </section>
-
-  <section>
-    <h2 data-i18n="audioTitle">Accesso ai file audio</h2>
-
-    <p data-i18n="audioText">
-      Quando importi un file, il sistema ti chiede il permesso.
-    </p>
-  </section>
-
-  <section>
-    <h2 data-i18n="thirdPartyTitle">Servizi di terze parti</h2>
-
-    <p data-i18n="thirdPartyText">
-      Nessuno.
-    </p>
-  </section>
-
-  <section>
-    <h2 data-i18n="minorsTitle">Minori</h2>
-
-    <p data-i18n="minorsText">
-      Dampers è adatto a qualsiasi età.
-    </p>
-  </section>
-
-  <section>
-    <h2 data-i18n="changesTitle">Modifiche</h2>
-
-    <p data-i18n="changesText">
-      Se questa informativa cambierà, la versione aggiornata sarà pubblicata qui.
-    </p>
   </section>
 
   <footer>
-    <span data-i18n="updated">
-      Ultimo aggiornamento: 27 agosto 2026
-    </span>
-
-    <span data-i18n="platform">
-      Dampers per iOS e Android
-    </span>
+    <nav>
+      <a href="./" aria-current="page" data-i18n="navSupport">Assistenza</a>
+      <a href="privacy" data-i18n="navPrivacy">Privacy</a>
+      <a href="terms" data-i18n="navTerms">Termini</a>
+    </nav>
+    <span data-i18n="platform">Dampers per iOS e Android</span>
   </footer>
 
 </div>
 
 <script>
-  const translations = {
-
-    /* ─────────────────────────────────────────────
-       ITALIANO
-    ───────────────────────────────────────────── */
+  const PAGE_TEXT = {
 
     it: {
-      eyebrow: "Dampers · Assistenza e privacy",
-      title: "Come funziona,<br>e cosa non facciamo.",
-      lede: "Le domande più frequenti, come scriverci, e l'informativa privacy: nessun account, nessuna analitica, nessun server.",
+      pageTitle: "Assistenza · Dampers",
+      description: "Assistenza di Dampers: domande frequenti e contatti.",
+      eyebrow: "Dampers · Assistenza",
+      title: "Come funziona,<br>e come scriverci.",
+      lede: "Le domande più frequenti e i contatti. Nessun account, nessuna analitica.",
 
       whatTitle: "Cos'è Dampers",
       whatText: "Quando parte qualcosa che non vuoi sentire, premi un tasto: Dampers abbassa l'audio in corso e ci mette sopra un suono tuo, poi sfuma da solo. Funziona su qualsiasi cosa stia suonando sul telefono.",
@@ -572,7 +149,7 @@
       q3: "Ho scelto un file ma non viene importato.",
       a3: "Se si trova su iCloud Drive, Google Drive o un altro servizio in cloud e non è ancora scaricato sul telefono, l'importazione fallisce. Aprilo una volta nell'app dei file, aspetta che finisca di scaricarsi, e riprova.",
       q4: "Sento ancora l'audio di sotto.",
-      a4: "È previsto: il sistema permette di attenuare l'audio delle altre app, non di silenziarlo. Per coprire meglio una voce usa i suoni pronti a banda larga, come il rumore rosa: mascherano molto più della musica.",
+      a4: "È previsto: il sistema permette di attenuare l'audio delle altre app, non di silenziarlo. Per coprire meglio una voce scegli suoni continui e ricchi, come la pioggia o il ventilatore del catalogo: mascherano molto più della musica.",
       q5: "Consuma batteria?",
       a5: "Mentre è pronta a intervenire, sì, un po'. Per questo si spegne da sola dopo qualche minuto in cui non sente più nulla in riproduzione.",
       q6: "Funziona in auto o con le cuffie?",
@@ -582,55 +159,16 @@
       contactText: "Per assistenza, segnalazioni o domande sull'app, scrivi a",
       contactReply: "Rispondiamo di solito entro pochi giorni.",
 
-      partPrivacy: "Informativa privacy",
-
-      dataTitle: "Dati raccolti",
-      dataStatement: "Dampers non raccoglie, trasmette o condivide alcun dato personale.",
-      dataText: "L'app non richiede la creazione di un account, non integra strumenti di analisi o pubblicità, e non comunica con server esterni. Non esiste un'infrastruttura in grado di ricevere dati da questa app.",
-
-      notifTitle: "Accesso alle notifiche",
-      notifStatement: "Dampers non legge, non apre e non memorizza il contenuto delle tue notifiche.",
-      notifText1: "Sulla versione Android, il rilevamento automatico della pubblicità richiede il permesso di accesso alle notifiche. Il motivo è tecnico: su Android quel permesso è il prerequisito per interrogare le sessioni multimediali attive tramite MediaSessionManager. È l'unica strada disponibile, e serve solo a questo.",
-      notifText2: "Quello che Dampers legge sono i metadati della sessione multimediale in riproduzione, cioè le stesse informazioni che il sistema mostra nei comandi musicali della schermata di blocco:",
-      notifItem1: "il titolo del brano o dell'annuncio in riproduzione;",
-      notifItem2: "il nome dell'artista, che le app di streaming usano per dichiarare gli annunci pubblicitari;",
-      notifItem3: "la durata e lo stato della riproduzione.",
-      notifText3: "Questi dati vengono confrontati sul dispositivo per capire se è in corso una pubblicità, e non vengono salvati né trasmessi da nessuna parte. Il permesso è facoltativo: senza, l'app funziona con il tocco manuale, il riquadro rapido e le scorciatoie. Puoi revocarlo in qualsiasi momento dalle impostazioni di Android, senza disinstallare l'app.",
-
-      localTitle: "Dati che restano sul dispositivo",
-      localIntro: "Alcune informazioni vengono salvate localmente sul tuo dispositivo perché l'app funzioni:",
-      localItem1: "Le tue preferenze, come la durata impostata e il contenuto selezionato.",
-      localItem2: "I file audio che scegli di importare e l'ordine in cui li organizzi.",
-      localOutro: "Questi dati non lasciano mai il dispositivo e vengono rimossi quando disinstalli l'app.",
-
-      audioTitle: "Accesso ai file audio",
-      audioText: "Quando importi un file, il sistema ti chiede il permesso e Dampers riceve solo il file che hai selezionato. L'app non accede al resto della tua libreria e non legge i contenuti riprodotti da altre applicazioni.",
-
-      thirdPartyTitle: "Servizi di terze parti",
-      thirdPartyText: "Nessuno. Dampers non include SDK di terze parti per analisi, pubblicità o tracciamento.",
-
-      minorsTitle: "Minori",
-      minorsText: "Dampers è adatto a qualsiasi età. Poiché non raccoglie dati, non tratta informazioni relative a minori.",
-
-      changesTitle: "Modifiche",
-      changesText: "Se questa informativa cambierà, la versione aggiornata sarà pubblicata su questa pagina con una nuova data di revisione.",
-
-      updated: "Ultimo aggiornamento: 27 agosto 2026",
-      platform: "Dampers per iOS e Android",
-
-      pageTitle: "Assistenza · Dampers",
-      description: "Assistenza e informativa privacy di Dampers. Nessun dato raccolto."
+      legalTitle: "Privacy e termini",
+      legalText: "Dampers non raccoglie dati personali. Trovi tutti i dettagli nell'informativa privacy; le condizioni d'uso e d'acquisto sono nei termini."
     },
 
-
-    /* ─────────────────────────────────────────────
-       ENGLISH
-    ───────────────────────────────────────────── */
-
     en: {
-      eyebrow: "Dampers · Support & Privacy",
-      title: "How it works,<br>and what we don't do.",
-      lede: "Common questions, how to reach us, and the privacy policy: no account, no analytics, no servers.",
+      pageTitle: "Support · Dampers",
+      description: "Dampers support: frequently asked questions and contact.",
+      eyebrow: "Dampers · Support",
+      title: "How it works,<br>and how to reach us.",
+      lede: "Common questions and how to get in touch. No account, no analytics.",
 
       whatTitle: "What Dampers is",
       whatText: "When something you'd rather not hear starts playing, press a button: Dampers lowers the current audio and plays a sound of yours over it, then fades out. It works over anything playing on your phone.",
@@ -647,7 +185,7 @@
       q3: "I picked a file but it won't import.",
       a3: "If it's in iCloud Drive, Google Drive or another cloud service and hasn't downloaded to your phone yet, the import fails. Open it once in your files app, wait for it to finish downloading, then try again.",
       q4: "I can still hear the audio underneath.",
-      a4: "That's expected: the system lets an app lower other apps' audio, not silence it. To mask a voice better, use the built-in broadband sounds such as pink noise — they cover far more than music does.",
+      a4: "That's expected: the system lets an app lower other apps' audio, not silence it. To mask a voice better, pick steady, full sounds such as the rain or the fan from the catalog — they cover far more than music does.",
       q5: "Does it drain the battery?",
       a5: "While it's standing by, a little. That's why it switches itself off after a few minutes with nothing playing.",
       q6: "Does it work in the car or with headphones?",
@@ -657,55 +195,16 @@
       contactText: "For support, bug reports or questions about the app, write to",
       contactReply: "We usually reply within a few days.",
 
-      partPrivacy: "Privacy policy",
-
-      dataTitle: "Data collected",
-      dataStatement: "Dampers does not collect, transmit, or share any personal data.",
-      dataText: "The app does not require an account, does not include analytics or advertising tools, and does not communicate with external servers. There is no infrastructure capable of receiving data from this app.",
-
-      notifTitle: "Notification access",
-      notifStatement: "Dampers does not read, open, or store the contents of your notifications.",
-      notifText1: "On the Android version, automatic ad detection requires notification access permission. The reason is technical: on Android that permission is the prerequisite for querying active media sessions through MediaSessionManager. It is the only route available, and it is used for nothing else.",
-      notifText2: "What Dampers reads is the metadata of the media session currently playing — the same information the system shows in the music controls on your lock screen:",
-      notifItem1: "the title of the track or ad currently playing;",
-      notifItem2: "the artist name, which streaming apps use to declare advertisements;",
-      notifItem3: "the duration and playback state.",
-      notifText3: "This data is compared on the device to determine whether an ad is playing, and is neither stored nor transmitted anywhere. The permission is optional: without it, the app works with a manual tap, the Quick Settings tile, and shortcuts. You can revoke it at any time from Android settings, without uninstalling the app.",
-
-      localTitle: "Data that stays on your device",
-      localIntro: "Some information is stored locally on your device so the app can function:",
-      localItem1: "Your preferences, such as the selected duration and content.",
-      localItem2: "The audio files you choose to import and the order in which you organize them.",
-      localOutro: "This data never leaves your device and is removed when you uninstall the app.",
-
-      audioTitle: "Access to audio files",
-      audioText: "When you import a file, the system asks for your permission and Dampers receives only the file you selected. The app does not access the rest of your library and does not read content played by other applications.",
-
-      thirdPartyTitle: "Third-party services",
-      thirdPartyText: "None. Dampers does not include third-party SDKs for analytics, advertising, or tracking.",
-
-      minorsTitle: "Children",
-      minorsText: "Dampers is suitable for all ages. Since it does not collect data, it does not process information relating to children.",
-
-      changesTitle: "Changes",
-      changesText: "If this privacy policy changes, the updated version will be published on this page with a new revision date.",
-
-      updated: "Last updated: August 27, 2026",
-      platform: "Dampers for iOS and Android",
-
-      pageTitle: "Support · Dampers",
-      description: "Dampers support and privacy policy. No data collected."
+      legalTitle: "Privacy and terms",
+      legalText: "Dampers does not collect personal data. The privacy policy has all the details; the conditions of use and purchase are in the terms."
     },
 
-
-    /* ─────────────────────────────────────────────
-       DEUTSCH
-    ───────────────────────────────────────────── */
-
     de: {
-      eyebrow: "Dampers · Support & Datenschutz",
-      title: "Wie es funktioniert,<br>und was wir nicht tun.",
-      lede: "Häufige Fragen, wie du uns erreichst, und die Datenschutzerklärung: kein Konto, keine Analyse, keine Server.",
+      pageTitle: "Support · Dampers",
+      description: "Dampers-Support: häufige Fragen und Kontakt.",
+      eyebrow: "Dampers · Support",
+      title: "Wie es funktioniert,<br>und wie du uns erreichst.",
+      lede: "Häufige Fragen und Kontakt. Kein Konto, keine Analyse.",
 
       whatTitle: "Was Dampers ist",
       whatText: "Wenn etwas läuft, das du nicht hören willst, drückst du eine Taste: Dampers senkt den laufenden Ton und legt einen eigenen Klang darüber, der danach ausblendet. Das klappt über allem, was auf dem Telefon spielt.",
@@ -722,7 +221,7 @@
       q3: "Ich habe eine Datei gewählt, aber sie wird nicht importiert.",
       a3: "Liegt sie in iCloud Drive, Google Drive oder einem anderen Cloud-Dienst und ist noch nicht aufs Telefon geladen, schlägt der Import fehl. Öffne sie einmal in deiner Dateien-App, warte bis sie geladen ist, und versuch es erneut.",
       q4: "Ich höre den Ton darunter immer noch.",
-      a4: "Das ist so vorgesehen: Das System erlaubt es, den Ton anderer Apps zu senken, nicht ihn stummzuschalten. Um eine Stimme besser zu überdecken, nimm die eingebauten Breitbandklänge wie rosa Rauschen — sie überdecken weit mehr als Musik.",
+      a4: "Das ist so vorgesehen: Das System erlaubt es, den Ton anderer Apps zu senken, nicht ihn stummzuschalten. Um eine Stimme besser zu überdecken, nimm gleichmäßige, volle Klänge wie den Regen oder den Ventilator aus dem Katalog — sie überdecken weit mehr als Musik.",
       q5: "Verbraucht es Akku?",
       a5: "Solange es bereitsteht, ein wenig. Deshalb schaltet es sich nach ein paar Minuten ohne laufenden Ton von selbst ab.",
       q6: "Funktioniert es im Auto oder mit Kopfhörern?",
@@ -732,58 +231,19 @@
       contactText: "Für Support, Fehlermeldungen oder Fragen zur App schreibe an",
       contactReply: "Wir antworten meist innerhalb weniger Tage.",
 
-      partPrivacy: "Datenschutzerklärung",
-
-      dataTitle: "Erhobene Daten",
-      dataStatement: "Dampers erhebt, überträgt oder teilt keine personenbezogenen Daten.",
-      dataText: "Die App erfordert kein Benutzerkonto, enthält keine Analyse- oder Werbetools und kommuniziert nicht mit externen Servern. Es gibt keine Infrastruktur, die Daten von dieser App empfangen kann.",
-
-      notifTitle: "Benachrichtigungszugriff",
-      notifStatement: "Dampers liest, öffnet und speichert den Inhalt deiner Benachrichtigungen nicht.",
-      notifText1: "In der Android-Version benötigt die automatische Werbeerkennung die Berechtigung für den Benachrichtigungszugriff. Der Grund ist technisch: Unter Android ist diese Berechtigung die Voraussetzung dafür, aktive Mediensitzungen über MediaSessionManager abzufragen. Es ist der einzige verfügbare Weg, und er dient ausschließlich diesem Zweck.",
-      notifText2: "Was Dampers liest, sind die Metadaten der laufenden Mediensitzung — dieselben Angaben, die das System in der Musiksteuerung auf dem Sperrbildschirm anzeigt:",
-      notifItem1: "den Titel des laufenden Stücks oder der laufenden Werbung;",
-      notifItem2: "den Namen des Interpreten, über den Streaming-Apps Werbung kennzeichnen;",
-      notifItem3: "die Länge und den Wiedergabestatus.",
-      notifText3: "Diese Angaben werden auf dem Gerät verglichen, um zu erkennen, ob gerade Werbung läuft; sie werden weder gespeichert noch irgendwohin übertragen. Die Berechtigung ist freiwillig: Ohne sie funktioniert die App mit dem Tippen von Hand, der Kachel in den Schnelleinstellungen und den Verknüpfungen. Du kannst sie jederzeit in den Android-Einstellungen widerrufen, ohne die App zu deinstallieren.",
-
-      localTitle: "Daten, die auf deinem Gerät bleiben",
-      localIntro: "Einige Informationen werden lokal auf deinem Gerät gespeichert, damit die App funktioniert:",
-      localItem1: "Deine Einstellungen, wie die ausgewählte Dauer und der ausgewählte Inhalt.",
-      localItem2: "Die Audiodateien, die du importierst, und die Reihenfolge, in der du sie organisierst.",
-      localOutro: "Diese Daten verlassen dein Gerät niemals und werden beim Deinstallieren der App entfernt.",
-
-      audioTitle: "Zugriff auf Audiodateien",
-      audioText: "Wenn du eine Datei importierst, bittet das System um deine Erlaubnis und Dampers erhält nur die von dir ausgewählte Datei. Die App greift nicht auf den Rest deiner Mediathek zu und liest keine Inhalte, die von anderen Apps wiedergegeben werden.",
-
-      thirdPartyTitle: "Dienste von Drittanbietern",
-      thirdPartyText: "Keine. Dampers verwendet keine SDKs von Drittanbietern für Analyse, Werbung oder Tracking.",
-
-      minorsTitle: "Minderjährige",
-      minorsText: "Dampers ist für alle Altersgruppen geeignet. Da keine Daten erhoben werden, verarbeitet die App keine Informationen über Minderjährige.",
-
-      changesTitle: "Änderungen",
-      changesText: "Falls sich diese Datenschutzerklärung ändert, wird die aktualisierte Version auf dieser Seite mit einem neuen Aktualisierungsdatum veröffentlicht.",
-
-      updated: "Letzte Aktualisierung: 27. August 2026",
-      platform: "Dampers für iOS und Android",
-
-      pageTitle: "Support · Dampers",
-      description: "Support und Datenschutzerklärung von Dampers. Keine Daten werden erhoben."
+      legalTitle: "Datenschutz und Nutzungsbedingungen",
+      legalText: "Dampers erhebt keine personenbezogenen Daten. Alle Details stehen in der Datenschutzerklärung; die Nutzungs- und Kaufbedingungen in den Nutzungsbedingungen."
     },
 
-
-    /* ─────────────────────────────────────────────
-       FRANÇAIS
-    ───────────────────────────────────────────── */
-
     fr: {
-      eyebrow: "Dampers · Assistance et confidentialité",
-      title: "Comment ça marche,<br>et ce qu'on ne fait pas.",
-      lede: "Les questions fréquentes, comment nous écrire, et la politique de confidentialité : aucun compte, aucune analyse, aucun serveur.",
+      pageTitle: "Assistance · Dampers",
+      description: "Assistance Dampers : questions fréquentes et contact.",
+      eyebrow: "Dampers · Assistance",
+      title: "Comment ça marche,<br>et comment nous écrire.",
+      lede: "Les questions fréquentes et nos contacts. Aucun compte, aucune analyse.",
 
       whatTitle: "Ce qu'est Dampers",
-      whatText: "Quand démarre quelque chose que tu ne veux pas entendre, tu appuies sur une touche : Dampers baisse l'audio en cours et pose l'un de tes sons par-dessus, puis s'arrête tout seul. Ça marche sur n'importe quoi qui joue sur le téléphone.",
+      whatText: "Quand démarre quelque chose que tu ne veux pas entendre, tu appuies sur une touche : Dampers baisse l'audio en cours et pose l'un de tes sons par-dessus, puis s'estompe tout seul. Ça marche sur n'importe quoi qui joue sur le téléphone.",
 
       faqTitle: "Questions fréquentes",
       q1: "Comment la lancer sans ouvrir l'app ?",
@@ -797,7 +257,7 @@
       q3: "J'ai choisi un fichier mais il ne s'importe pas.",
       a3: "S'il est sur iCloud Drive, Google Drive ou un autre service cloud et pas encore téléchargé sur le téléphone, l'import échoue. Ouvre-le une fois dans ton app de fichiers, attends la fin du téléchargement, puis réessaie.",
       q4: "J'entends encore l'audio en dessous.",
-      a4: "C'est prévu : le système permet d'atténuer l'audio des autres apps, pas de le couper. Pour mieux couvrir une voix, utilise les sons intégrés à large bande comme le bruit rose — ils masquent bien plus que la musique.",
+      a4: "C'est prévu : le système permet d'atténuer l'audio des autres apps, pas de le couper. Pour mieux couvrir une voix, choisis des sons continus et pleins comme la pluie ou le ventilateur du catalogue — ils masquent bien plus que la musique.",
       q5: "Est-ce que ça consomme de la batterie ?",
       a5: "Tant qu'elle reste prête, un peu. C'est pour ça qu'elle s'éteint seule après quelques minutes sans rien qui joue.",
       q6: "Ça marche en voiture ou avec un casque ?",
@@ -807,58 +267,19 @@
       contactText: "Pour de l'aide, un signalement ou une question sur l'app, écris à",
       contactReply: "Nous répondons en général sous quelques jours.",
 
-      partPrivacy: "Politique de confidentialité",
-
-      dataTitle: "Données collectées",
-      dataStatement: "Dampers ne collecte, ne transmet et ne partage aucune donnée personnelle.",
-      dataText: "L'application ne nécessite pas de compte, n'intègre aucun outil d'analyse ou de publicité et ne communique avec aucun serveur externe. Il n'existe aucune infrastructure capable de recevoir des données provenant de cette application.",
-
-      notifTitle: "Accès aux notifications",
-      notifStatement: "Dampers ne lit pas, n'ouvre pas et n'enregistre pas le contenu de vos notifications.",
-      notifText1: "Sur la version Android, la détection automatique des publicités nécessite l'autorisation d'accès aux notifications. La raison est technique : sur Android, cette autorisation est le prérequis pour interroger les sessions multimédias actives via MediaSessionManager. C'est la seule voie disponible, et elle ne sert qu'à cela.",
-      notifText2: "Ce que Dampers lit, ce sont les métadonnées de la session multimédia en cours de lecture — les mêmes informations que le système affiche dans les commandes musicales de l'écran verrouillé :",
-      notifItem1: "le titre du morceau ou de la publicité en cours ;",
-      notifItem2: "le nom de l'artiste, que les applis de streaming utilisent pour signaler les publicités ;",
-      notifItem3: "la durée et l'état de la lecture.",
-      notifText3: "Ces données sont comparées sur l'appareil pour déterminer si une publicité est en cours ; elles ne sont ni enregistrées ni transmises où que ce soit. L'autorisation est facultative : sans elle, l'application fonctionne avec l'appui manuel, la tuile des réglages rapides et les raccourcis. Vous pouvez la révoquer à tout moment depuis les réglages d'Android, sans désinstaller l'application.",
-
-      localTitle: "Données conservées sur votre appareil",
-      localIntro: "Certaines informations sont enregistrées localement sur votre appareil afin que l'application fonctionne :",
-      localItem1: "Vos préférences, telles que la durée sélectionnée et le contenu choisi.",
-      localItem2: "Les fichiers audio que vous choisissez d'importer et l'ordre dans lequel vous les organisez.",
-      localOutro: "Ces données ne quittent jamais votre appareil et sont supprimées lorsque vous désinstallez l'application.",
-
-      audioTitle: "Accès aux fichiers audio",
-      audioText: "Lorsque vous importez un fichier, le système vous demande votre autorisation et Dampers reçoit uniquement le fichier que vous avez sélectionné. L'application n'accède pas au reste de votre bibliothèque et ne lit pas les contenus diffusés par d'autres applications.",
-
-      thirdPartyTitle: "Services tiers",
-      thirdPartyText: "Aucun. Dampers n'intègre aucun SDK tiers destiné à l'analyse, à la publicité ou au suivi.",
-
-      minorsTitle: "Mineurs",
-      minorsText: "Dampers convient à tous les âges. Comme aucune donnée n'est collectée, l'application ne traite aucune information concernant les mineurs.",
-
-      changesTitle: "Modifications",
-      changesText: "Si cette politique de confidentialité est modifiée, la version mise à jour sera publiée sur cette page avec une nouvelle date de révision.",
-
-      updated: "Dernière mise à jour : 27 août 2026",
-      platform: "Dampers pour iOS et Android",
-
-      pageTitle: "Assistance · Dampers",
-      description: "Assistance et politique de confidentialité de Dampers. Aucune donnée collectée."
+      legalTitle: "Confidentialité et conditions",
+      legalText: "Dampers ne collecte aucune donnée personnelle. Tous les détails sont dans la politique de confidentialité ; les conditions d'utilisation et d'achat sont dans les conditions."
     },
 
-
-    /* ─────────────────────────────────────────────
-       ESPAÑOL
-    ───────────────────────────────────────────── */
-
     es: {
-      eyebrow: "Dampers · Soporte y privacidad",
-      title: "Cómo funciona,<br>y qué no hacemos.",
-      lede: "Las preguntas más frecuentes, cómo escribirnos y la política de privacidad: sin cuenta, sin analíticas, sin servidores.",
+      pageTitle: "Soporte · Dampers",
+      description: "Soporte de Dampers: preguntas frecuentes y contacto.",
+      eyebrow: "Dampers · Soporte",
+      title: "Cómo funciona,<br>y cómo escribirnos.",
+      lede: "Las preguntas más frecuentes y el contacto. Sin cuenta, sin analíticas.",
 
       whatTitle: "Qué es Dampers",
-      whatText: "Cuando empieza algo que no quieres oír, pulsas un botón: Dampers baja el audio en curso y pone encima un sonido tuyo, y luego se apaga solo. Funciona sobre cualquier cosa que esté sonando en el teléfono.",
+      whatText: "Cuando empieza algo que no quieres oír, pulsas un botón: Dampers baja el audio en curso y pone encima un sonido tuyo, y luego se desvanece solo. Funciona sobre cualquier cosa que esté sonando en el teléfono.",
 
       faqTitle: "Preguntas frecuentes",
       q1: "¿Cómo la lanzo sin abrir la app?",
@@ -872,7 +293,7 @@
       q3: "He elegido un archivo pero no se importa.",
       a3: "Si está en iCloud Drive, Google Drive u otro servicio en la nube y aún no se ha descargado al teléfono, la importación falla. Ábrelo una vez en tu app de archivos, espera a que termine de descargarse y vuelve a intentarlo.",
       q4: "Sigo oyendo el audio de debajo.",
-      a4: "Es lo previsto: el sistema permite atenuar el audio de otras apps, no silenciarlo. Para tapar mejor una voz usa los sonidos integrados de banda ancha, como el ruido rosa: enmascaran mucho más que la música.",
+      a4: "Es lo previsto: el sistema permite atenuar el audio de otras apps, no silenciarlo. Para tapar mejor una voz elige sonidos continuos y llenos, como la lluvia o el ventilador del catálogo: enmascaran mucho más que la música.",
       q5: "¿Consume batería?",
       a5: "Mientras está lista para actuar, un poco. Por eso se apaga sola tras unos minutos sin nada en reproducción.",
       q6: "¿Funciona en el coche o con auriculares?",
@@ -882,55 +303,16 @@
       contactText: "Para soporte, incidencias o dudas sobre la app, escribe a",
       contactReply: "Solemos responder en pocos días.",
 
-      partPrivacy: "Política de privacidad",
-
-      dataTitle: "Datos recopilados",
-      dataStatement: "Dampers no recopila, transmite ni comparte ningún dato personal.",
-      dataText: "La aplicación no requiere una cuenta, no incluye herramientas de análisis o publicidad y no se comunica con servidores externos. No existe ninguna infraestructura capaz de recibir datos de esta aplicación.",
-
-      notifTitle: "Acceso a las notificaciones",
-      notifStatement: "Dampers no lee, no abre ni almacena el contenido de tus notificaciones.",
-      notifText1: "En la versión de Android, la detección automática de anuncios requiere el permiso de acceso a las notificaciones. El motivo es técnico: en Android ese permiso es el requisito previo para consultar las sesiones multimedia activas mediante MediaSessionManager. Es la única vía disponible y sirve únicamente para eso.",
-      notifText2: "Lo que Dampers lee son los metadatos de la sesión multimedia en reproducción, es decir, la misma información que el sistema muestra en los controles de música de la pantalla de bloqueo:",
-      notifItem1: "el título de la canción o del anuncio en reproducción;",
-      notifItem2: "el nombre del artista, que las apps de streaming usan para declarar los anuncios publicitarios;",
-      notifItem3: "la duración y el estado de la reproducción.",
-      notifText3: "Estos datos se comparan en el dispositivo para determinar si hay un anuncio en curso, y no se guardan ni se transmiten a ninguna parte. El permiso es opcional: sin él, la app funciona con el toque manual, el recuadro de ajustes rápidos y los accesos directos. Puedes revocarlo en cualquier momento desde los ajustes de Android, sin desinstalar la app.",
-
-      localTitle: "Datos que permanecen en tu dispositivo",
-      localIntro: "Algunos datos se almacenan localmente en tu dispositivo para que la aplicación funcione:",
-      localItem1: "Tus preferencias, como la duración seleccionada y el contenido elegido.",
-      localItem2: "Los archivos de audio que eliges importar y el orden en el que los organizas.",
-      localOutro: "Estos datos nunca salen de tu dispositivo y se eliminan cuando desinstalas la aplicación.",
-
-      audioTitle: "Acceso a archivos de audio",
-      audioText: "Cuando importas un archivo, el sistema solicita tu permiso y Dampers recibe únicamente el archivo que has seleccionado. La aplicación no accede al resto de tu biblioteca ni lee contenido reproducido por otras aplicaciones.",
-
-      thirdPartyTitle: "Servicios de terceros",
-      thirdPartyText: "Ninguno. Dampers no incluye SDK de terceros para análisis, publicidad o seguimiento.",
-
-      minorsTitle: "Menores",
-      minorsText: "Dampers es adecuada para todas las edades. Como no recopila datos, no procesa información relacionada con menores.",
-
-      changesTitle: "Cambios",
-      changesText: "Si esta política de privacidad cambia, la versión actualizada se publicará en esta página con una nueva fecha de revisión.",
-
-      updated: "Última actualización: 27 de agosto de 2026",
-      platform: "Dampers para iOS y Android",
-
-      pageTitle: "Soporte · Dampers",
-      description: "Soporte y política de privacidad de Dampers. No se recopilan datos."
+      legalTitle: "Privacidad y términos",
+      legalText: "Dampers no recopila datos personales. Todos los detalles están en la política de privacidad; las condiciones de uso y de compra están en los términos."
     },
 
-
-    /* ─────────────────────────────────────────────
-       PORTUGUÊS
-    ───────────────────────────────────────────── */
-
     pt: {
-      eyebrow: "Dampers · Apoio e privacidade",
-      title: "Como funciona,<br>e o que não fazemos.",
-      lede: "As perguntas mais frequentes, como contactar-nos, e a política de privacidade: sem conta, sem análises, sem servidores.",
+      pageTitle: "Apoio · Dampers",
+      description: "Apoio da Dampers: perguntas frequentes e contacto.",
+      eyebrow: "Dampers · Apoio",
+      title: "Como funciona,<br>e como contactar-nos.",
+      lede: "As perguntas mais frequentes e o contacto. Sem conta, sem análises.",
 
       whatTitle: "O que é a Dampers",
       whatText: "Quando começa algo que não queres ouvir, carregas num botão: a Dampers baixa o áudio em curso e põe por cima um som teu, e depois desvanece sozinha. Funciona sobre qualquer coisa que esteja a tocar no telemóvel.",
@@ -947,7 +329,7 @@
       q3: "Escolhi um ficheiro mas não é importado.",
       a3: "Se está no iCloud Drive, no Google Drive ou noutro serviço na nuvem e ainda não foi descarregado para o telemóvel, a importação falha. Abre-o uma vez na tua app de ficheiros, espera que termine de descarregar e tenta de novo.",
       q4: "Continuo a ouvir o áudio por baixo.",
-      a4: "É esperado: o sistema permite atenuar o áudio das outras apps, não silenciá-lo. Para tapar melhor uma voz usa os sons prontos de banda larga, como o ruído rosa: mascaram muito mais do que a música.",
+      a4: "É esperado: o sistema permite atenuar o áudio das outras apps, não silenciá-lo. Para tapar melhor uma voz escolhe sons contínuos e cheios, como a chuva ou a ventoinha do catálogo: mascaram muito mais do que a música.",
       q5: "Gasta bateria?",
       a5: "Enquanto está pronta a agir, um pouco. Por isso desliga-se sozinha ao fim de alguns minutos sem nada a tocar.",
       q6: "Funciona no carro ou com auscultadores?",
@@ -957,126 +339,12 @@
       contactText: "Para apoio, comunicação de problemas ou dúvidas sobre a app, escreve para",
       contactReply: "Costumamos responder em poucos dias.",
 
-      partPrivacy: "Política de privacidade",
-
-      dataTitle: "Dados recolhidos",
-      dataStatement: "A Dampers não recolhe, transmite nem partilha quaisquer dados pessoais.",
-      dataText: "A aplicação não requer uma conta, não inclui ferramentas de análise ou publicidade e não comunica com servidores externos. Não existe qualquer infraestrutura capaz de receber dados desta aplicação.",
-
-      notifTitle: "Acesso às notificações",
-      notifStatement: "A Dampers não lê, não abre nem guarda o conteúdo das tuas notificações.",
-      notifText1: "Na versão Android, a deteção automática de publicidade requer a permissão de acesso às notificações. A razão é técnica: no Android essa permissão é o pré-requisito para consultar as sessões multimédia ativas através do MediaSessionManager. É a única via disponível e serve apenas para isso.",
-      notifText2: "O que a Dampers lê são os metadados da sessão multimédia em reprodução, ou seja, as mesmas informações que o sistema mostra nos controlos de música do ecrã de bloqueio:",
-      notifItem1: "o título da faixa ou do anúncio em reprodução;",
-      notifItem2: "o nome do artista, que as apps de streaming usam para declarar os anúncios publicitários;",
-      notifItem3: "a duração e o estado da reprodução.",
-      notifText3: "Estes dados são comparados no dispositivo para perceber se está a decorrer publicidade, e não são guardados nem transmitidos para lado nenhum. A permissão é facultativa: sem ela, a app funciona com o toque manual, o mosaico das definições rápidas e os atalhos. Podes revogá-la a qualquer momento nas definições do Android, sem desinstalar a app.",
-
-      localTitle: "Dados que permanecem no dispositivo",
-      localIntro: "Algumas informações são armazenadas localmente no seu dispositivo para que a aplicação funcione:",
-      localItem1: "As suas preferências, como a duração selecionada e o conteúdo escolhido.",
-      localItem2: "Os ficheiros de áudio que escolhe importar e a ordem em que os organiza.",
-      localOutro: "Estes dados nunca saem do seu dispositivo e são removidos quando desinstala a aplicação.",
-
-      audioTitle: "Acesso aos ficheiros de áudio",
-      audioText: "Quando importa um ficheiro, o sistema solicita a sua autorização e a Dampers recebe apenas o ficheiro que selecionou. A aplicação não acede ao resto da sua biblioteca nem lê conteúdos reproduzidos por outras aplicações.",
-
-      thirdPartyTitle: "Serviços de terceiros",
-      thirdPartyText: "Nenhum. A Dampers não inclui SDKs de terceiros para análise, publicidade ou rastreamento.",
-
-      minorsTitle: "Menores",
-      minorsText: "A Dampers é adequada para todas as idades. Como não recolhe dados, não processa informações relativas a menores.",
-
-      changesTitle: "Alterações",
-      changesText: "Se esta política de privacidade for alterada, a versão atualizada será publicada nesta página com uma nova data de revisão.",
-
-      updated: "Última atualização: 27 de agosto de 2026",
-      platform: "Dampers para iOS e Android",
-
-      pageTitle: "Apoio · Dampers",
-      description: "Apoio e política de privacidade da Dampers. Nenhum dado é recolhido."
+      legalTitle: "Privacidade e termos",
+      legalText: "A Dampers não recolhe dados pessoais. Todos os detalhes estão na política de privacidade; as condições de utilização e de compra estão nos termos."
     }
   };
-
-
-  /*
-   * ─────────────────────────────────────────────
-   * Language handling
-   * ─────────────────────────────────────────────
-   */
-
-  const languageSelect = document.getElementById("languageSelect");
-
-  function detectLanguage() {
-
-    // 1. Prefer saved user choice
-    const savedLanguage = localStorage.getItem("dampers-language");
-
-    if (savedLanguage && translations[savedLanguage]) {
-      return savedLanguage;
-    }
-
-    // 2. Detect browser language
-    const browserLanguage =
-      (navigator.language || navigator.userLanguage || "it")
-      .toLowerCase()
-      .split("-")[0];
-
-    // 3. Supported language or Italian fallback
-    return translations[browserLanguage]
-      ? browserLanguage
-      : "it";
-  }
-
-
-  function setLanguage(language) {
-
-    if (!translations[language]) {
-      language = "it";
-    }
-
-    const content = translations[language];
-
-    // Update all translated elements
-    document.querySelectorAll("[data-i18n]").forEach(element => {
-
-      const key = element.getAttribute("data-i18n");
-
-      if (content[key] !== undefined) {
-        element.innerHTML = content[key];
-      }
-
-    });
-
-    // Update page metadata
-    document.documentElement.lang = language;
-    document.title = content.pageTitle;
-
-    const description =
-      document.querySelector('meta[name="description"]');
-
-    if (description) {
-      description.setAttribute("content", content.description);
-    }
-
-    // Update selector
-    languageSelect.value = language;
-
-    // Remember preference
-    localStorage.setItem("dampers-language", language);
-  }
-
-
-  // Initial language
-  setLanguage(detectLanguage());
-
-
-  // Manual language selection
-  languageSelect.addEventListener("change", function() {
-    setLanguage(this.value);
-  });
-
 </script>
+<script src="site.js"></script>
 
 </body>
 </html>
