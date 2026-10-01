@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0A0B09">
+<title>Privacy · Dampers</title>
+<meta name="description" content="Informativa privacy di Dampers. Nessun dato personale raccolto.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,90,400;0,90,600;0,90,700;0,90,800;0,90,900;1,90,900&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="site.css">
+</head>
+
+<body>
+
+<div class="wrap">
+
+  <div class="top">
+    <a class="brand" href="./"><span class="brand-mark" aria-hidden="true">D</span>Dampers</a>
+    <label for="languageSelect" class="visually-hidden">Language</label>
+    <select id="languageSelect" class="language-select">
+      <option value="it">ITALIANO</option>
+      <option value="en">ENGLISH</option>
+      <option value="de">DEUTSCH</option>
+      <option value="fr">FRANÇAIS</option>
+      <option value="es">ESPAÑOL</option>
+      <option value="pt">PORTUGUÊS</option>
+    </select>
+  </div>
+
+  <header>
+    <svg class="mark" viewBox="0 0 600 86" aria-hidden="true" preserveAspectRatio="none">
+      <path d="M0,43 C15,43 20,4 30,4 C40,4 45,82 55,82 C65,82 70,4 80,4 C90,4 95,82 105,82
+               C115,82 120,7 130,7 C140,7 145,79 155,79 C165,79 170,12 180,12
+               C190,12 195,74 205,74 C215,74 220,18 230,18 C240,18 245,68 255,68
+               C265,68 270,25 280,25 C290,25 295,61 305,61 C315,61 320,31 330,31
+               C340,31 345,55 355,55 C365,55 370,36 380,36 C390,36 395,50 405,50
+               C415,50 420,40 430,40 C440,40 445,46 455,46 C465,46 470,42 480,42
+               C490,42 495,44 505,44 C515,44 520,43 530,43 L600,43"/>
+    </svg>
+
+    <p class="eyebrow" data-i18n="eyebrow">Dampers · Informativa privacy</p>
+    <h1 data-i18n="title">Cosa leggiamo,<br>e cosa no.</h1>
+    <p class="lede" data-i18n="lede">Nessun account, nessuna analitica, nessun server nostro. Ecco nel dettaglio cosa fa l'app con i tuoi dati.</p>
+  </header>
+
+  <section>
+    <h2 data-i18n="dataTitle">Dati raccolti</h2>
+    <div class="statement">
+      <p data-i18n="dataStatement">Dampers non raccoglie, trasmette o condivide alcun dato personale.</p>
+    </div>
+    <p data-i18n="dataText">L'app non richiede un account, non integra strumenti di analisi o pubblicità e non comunica con server nostri: non esiste un'infrastruttura in grado di ricevere dati da questa app.</p>
+  </section>
+
+  <!--
+    SEZIONE CRITICA PER LA REVISIONE GOOGLE PLAY.
+
+    E' qui che si dichiara l'uso di BIND_NOTIFICATION_LISTENER_SERVICE.
+    Un revisore che non trova questa sezione respinge la dichiarazione del
+    permesso. Deve dire tre cose senza ambiguita': cosa leggiamo, cosa NON
+    leggiamo, e che nulla lascia il dispositivo.
+
+    Non spostarla piu' in basso e non fonderla con altre sezioni.
+  -->
+  <section id="notification-access">
+    <h2><span class="tag android">Android</span><span data-i18n="notifTitle">Accesso alle notifiche</span></h2>
+    <div class="statement">
+      <p data-i18n="notifStatement">Dampers non legge, non apre e non memorizza il contenuto delle tue notifiche.</p>
+    </div>
+    <p data-i18n="notifText1">Sulla versione Android, il rilevamento automatico della pubblicità richiede il permesso di accesso alle notifiche. Il motivo è tecnico: su Android quel permesso è il prerequisito per interrogare le sessioni multimediali attive tramite MediaSessionManager. È l'unica strada disponibile, e serve solo a questo.</p>
+    <p data-i18n="notifText2">Quello che Dampers legge sono i metadati della sessione multimediale in riproduzione, cioè le stesse informazioni che il sistema mostra nei comandi musicali della schermata di blocco:</p>
+    <ul>
+      <li data-i18n="notifItem1">il titolo del brano o dell'annuncio in riproduzione;</li>
+      <li data-i18n="notifItem2">il nome dell'artista, che le app di streaming usano per dichiarare gli annunci pubblicitari;</li>
+      <li data-i18n="notifItem3">la durata e lo stato della riproduzione.</li>
+    </ul>
+    <p data-i18n="notifText3">Questi dati vengono confrontati sul dispositivo per capire se è in corso una pubblicità, e non vengono salvati né trasmessi da nessuna parte. Il permesso è facoltativo: senza, l'app funziona con il tocco manuale, il riquadro rapido e le scorciatoie. Puoi revocarlo in qualsiasi momento dalle impostazioni di Android, senza disinstallare l'app.</p>
+  </section>
+
+  <section>
+    <h2 data-i18n="localTitle">Dati che restano sul dispositivo</h2>
+    <p data-i18n="localIntro">Alcune informazioni vengono salvate localmente sul tuo dispositivo perché l'app funzioni:</p>
+    <ul>
+      <li data-i18n="localItem1">le tue preferenze, come la durata impostata e le playlist;</li>
+      <li data-i18n="localItem2">i file audio che scegli di importare e l'ordine in cui li organizzi;</li>
+      <li data-i18n="localItem3">il registro delle coperture (quando sono partite, quanto sono durate e con quale suono), usato solo per le statistiche.</li>
+    </ul>
+    <p data-i18n="localOutro">Questi dati restano sul dispositivo e vengono rimossi quando disinstalli l'app. Su Android, se hai attivato il backup di sistema, Android può includerli nel backup del tuo account Google come per le altre app: è un servizio di Google, a cui Dampers non ha accesso.</p>
+  </section>
+
+  <section>
+    <h2 data-i18n="audioTitle">Accesso ai file audio</h2>
+    <p data-i18n="audioText">Quando importi un file, il sistema ti chiede il permesso e Dampers riceve solo il file che hai selezionato. L'app non accede al resto della tua libreria.</p>
+  </section>
+
+  <section>
+    <h2><span class="tag android">Android</span><span data-i18n="purchaseTitle">Acquisti</span></h2>
+    <p data-i18n="purchaseText">La versione Pro si acquista tramite Google Play. Il pagamento è gestito interamente da Google: Dampers non vede né conserva i tuoi dati di pagamento e riceve solo la conferma che l'acquisto è avvenuto. Il trattamento dei dati da parte di Google è descritto nella <a href="https://policies.google.com/privacy">privacy policy di Google</a>.</p>
+  </section>
+
+  <section>
+    <h2 data-i18n="thirdPartyTitle">Servizi di terze parti</h2>
+    <p data-i18n="thirdPartyText">Dampers non include SDK di terze parti per analisi, pubblicità o tracciamento. L'unico servizio esterno è Google Play, solo per gli acquisti descritti sopra.</p>
+  </section>
+
+  <section>
+    <h2 data-i18n="minorsTitle">Minori</h2>
+    <p data-i18n="minorsText">Dampers è adatto a qualsiasi età. Poiché non raccoglie dati, non tratta informazioni relative a minori.</p>
+  </section>
+
+  <section>
+    <h2 data-i18n="changesTitle">Modifiche</h2>
+    <p data-i18n="changesText">Se questa informativa cambierà, la versione aggiornata sarà pubblicata su questa pagina con una nuova data di revisione.</p>
+  </section>
+
+  <section>
+    <h2 data-i18n="contactTitle">Contatti</h2>
+    <p>
+      <span data-i18n="contactText">Per domande su questa informativa scrivi a</span>
+      <a href="mailto:dampers.privacy@gmail.com">dampers.privacy@gmail.com</a>.
+    </p>
+    <div class="links">
+      <a class="pill ghost" href="terms" data-i18n="navTerms">Termini</a>
+      <a class="pill ghost" href="./" data-i18n="navSupport">Assistenza</a>
+    </div>
+  </section>
+
+  <footer>
+    <nav>
+      <a href="./" data-i18n="navSupport">Assistenza</a>
+      <a href="privacy" aria-current="page" data-i18n="navPrivacy">Privacy</a>
+      <a href="terms" data-i18n="navTerms">Termini</a>
+    </nav>
+    <span data-i18n="updated">Ultimo aggiornamento: 1 ottobre 2026</span>
+    <span data-i18n="platform">Dampers per iOS e Android</span>
+  </footer>
+
+</div>
+
+<script>
+  const GOOGLE_PRIVACY = '<a href="https://policies.google.com/privacy">';
+
+  const PAGE_TEXT = {
+
+    it: {
+      pageTitle: "Privacy · Dampers",
+      description: "Informativa privacy di Dampers. Nessun dato personale raccolto.",
+      eyebrow: "Dampers · Informativa privacy",
+      title: "Cosa leggiamo,<br>e cosa no.",
+      lede: "Nessun account, nessuna analitica, nessun server nostro. Ecco nel dettaglio cosa fa l'app con i tuoi dati.",
+
+      dataTitle: "Dati raccolti",
+      dataStatement: "Dampers non raccoglie, trasmette o condivide alcun dato personale.",
+      dataText: "L'app non richiede un account, non integra strumenti di analisi o pubblicità e non comunica con server nostri: non esiste un'infrastruttura in grado di ricevere dati da questa app.",
+
+      notifTitle: "Accesso alle notifiche",
+      notifStatement: "Dampers non legge, non apre e non memorizza il contenuto delle tue notifiche.",
+      notifText1: "Sulla versione Android, il rilevamento automatico della pubblicità richiede il permesso di accesso alle notifiche. Il motivo è tecnico: su Android quel permesso è il prerequisito per interrogare le sessioni multimediali attive tramite MediaSessionManager. È l'unica strada disponibile, e serve solo a questo.",
+      notifText2: "Quello che Dampers legge sono i metadati della sessione multimediale in riproduzione, cioè le stesse informazioni che il sistema mostra nei comandi musicali della schermata di blocco:",
+      notifItem1: "il titolo del brano o dell'annuncio in riproduzione;",
+      notifItem2: "il nome dell'artista, che le app di streaming usano per dichiarare gli annunci pubblicitari;",
+      notifItem3: "la durata e lo stato della riproduzione.",
+      notifText3: "Questi dati vengono confrontati sul dispositivo per capire se è in corso una pubblicità, e non vengono salvati né trasmessi da nessuna parte. Il permesso è facoltativo: senza, l'app funziona con il tocco manuale, il riquadro rapido e le scorciatoie. Puoi revocarlo in qualsiasi momento dalle impostazioni di Android, senza disinstallare l'app.",
+
+      localTitle: "Dati che restano sul dispositivo",
+      localIntro: "Alcune informazioni vengono salvate localmente sul tuo dispositivo perché l'app funzioni:",
+      localItem1: "le tue preferenze, come la durata impostata e le playlist;",
+      localItem2: "i file audio che scegli di importare e l'ordine in cui li organizzi;",
+      localItem3: "il registro delle coperture (quando sono partite, quanto sono durate e con quale suono), usato solo per le statistiche.",
+      localOutro: "Questi dati restano sul dispositivo e vengono rimossi quando disinstalli l'app. Su Android, se hai attivato il backup di sistema, Android può includerli nel backup del tuo account Google come per le altre app: è un servizio di Google, a cui Dampers non ha accesso.",
+
+      audioTitle: "Accesso ai file audio",
+      audioText: "Quando importi un file, il sistema ti chiede il permesso e Dampers riceve solo il file che hai selezionato. L'app non accede al resto della tua libreria.",
+
+      purchaseTitle: "Acquisti",
+      purchaseText: "La versione Pro si acquista tramite Google Play. Il pagamento è gestito interamente da Google: Dampers non vede né conserva i tuoi dati di pagamento e riceve solo la conferma che l'acquisto è avvenuto. Il trattamento dei dati da parte di Google è descritto nella " + GOOGLE_PRIVACY + "privacy policy di Google</a>.",
+
+      thirdPartyTitle: "Servizi di terze parti",
+      thirdPartyText: "Dampers non include SDK di terze parti per analisi, pubblicità o tracciamento. L'unico servizio esterno è Google Play, solo per gli acquisti descritti sopra.",
+
+      minorsTitle: "Minori",
+      minorsText: "Dampers è adatto a qualsiasi età. Poiché non raccoglie dati, non tratta informazioni relative a minori.",
+
+      changesTitle: "Modifiche",
+      changesText: "Se questa informativa cambierà, la versione aggiornata sarà pubblicata su questa pagina con una nuova data di revisione.",
+
+      contactTitle: "Contatti",
+      contactText: "Per domande su questa informativa scrivi a",
+      updated: "Ultimo aggiornamento: 1 ottobre 2026"
+    },
+
+    en: {
+      pageTitle: "Privacy · Dampers",
+      description: "Dampers privacy policy. No personal data collected.",
+      eyebrow: "Dampers · Privacy policy",
+      title: "What we read,<br>and what we don't.",
+      lede: "No account, no analytics, no servers of ours. Here is exactly what the app does with your data.",
+
+      dataTitle: "Data collected",
+      dataStatement: "Dampers does not collect, transmit, or share any personal data.",
+      dataText: "The app does not require an account, does not include analytics or advertising tools, and does not communicate with any servers of ours: there is no infrastructure capable of receiving data from this app.",
+
+      notifTitle: "Notification access",
+      notifStatement: "Dampers does not read, open, or store the contents of your notifications.",
+      notifText1: "On the Android version, automatic ad detection requires notification access permission. The reason is technical: on Android that permission is the prerequisite for querying active media sessions through MediaSessionManager. It is the only route available, and it is used for nothing else.",
+      notifText2: "What Dampers reads is the metadata of the media session currently playing — the same information the system shows in the music controls on your lock screen:",
+      notifItem1: "the title of the track or ad currently playing;",
+      notifItem2: "the artist name, which streaming apps use to declare advertisements;",
+      notifItem3: "the duration and playback state.",
+      notifText3: "This data is compared on the device to determine whether an ad is playing, and is neither stored nor transmitted anywhere. The permission is optional: without it, the app works with a manual tap, the Quick Settings tile, and shortcuts. You can revoke it at any time from Android settings, without uninstalling the app.",
+
+      localTitle: "Data that stays on your device",
+      localIntro: "Some information is stored locally on your device so the app can function:",
+      localItem1: "your preferences, such as the selected duration and your playlists;",
+      localItem2: "the audio files you choose to import and the order in which you organize them;",
+      localItem3: "the cover log (when each cover started, how long it lasted and which sound it used), used only for statistics.",
+      localOutro: "This data stays on your device and is removed when you uninstall the app. On Android, if you have system backup turned on, Android may include it in your Google account backup as it does for other apps: that is a Google service, and Dampers has no access to it.",
+
+      audioTitle: "Access to audio files",
+      audioText: "When you import a file, the system asks for your permission and Dampers receives only the file you selected. The app does not access the rest of your library.",
+
+      purchaseTitle: "Purchases",
+      purchaseText: "Dampers Pro is bought through Google Play. Payment is handled entirely by Google: Dampers never sees or stores your payment details and only receives confirmation that the purchase went through. How Google processes your data is described in " + GOOGLE_PRIVACY + "Google's privacy policy</a>.",
+
+      thirdPartyTitle: "Third-party services",
+      thirdPartyText: "Dampers does not include third-party SDKs for analytics, advertising, or tracking. The only external service is Google Play, used solely for the purchases described above.",
+
+      minorsTitle: "Children",
+      minorsText: "Dampers is suitable for all ages. Since it does not collect data, it does not process information relating to children.",
+
+      changesTitle: "Changes",
+      changesText: "If this privacy policy changes, the updated version will be published on this page with a new revision date.",
+
+      contactTitle: "Contact",
+      contactText: "For questions about this policy, write to",
+      updated: "Last updated: October 1, 2026"
+    },
+
+    de: {
+      pageTitle: "Datenschutz · Dampers",
+      description: "Datenschutzerklärung von Dampers. Es werden keine personenbezogenen Daten erhoben.",
+      eyebrow: "Dampers · Datenschutzerklärung",
+      title: "Was wir lesen,<br>und was nicht.",
+      lede: "Kein Konto, keine Analyse, keine eigenen Server. Hier steht genau, was die App mit deinen Daten macht.",
+
+      dataTitle: "Erhobene Daten",
+      dataStatement: "Dampers erhebt, überträgt oder teilt keine personenbezogenen Daten.",
+      dataText: "Die App erfordert kein Benutzerkonto, enthält keine Analyse- oder Werbetools und kommuniziert mit keinen eigenen Servern: Es gibt keine Infrastruktur, die Daten von dieser App empfangen kann.",
+
+      notifTitle: "Benachrichtigungszugriff",
+      notifStatement: "Dampers liest, öffnet und speichert den Inhalt deiner Benachrichtigungen nicht.",
+      notifText1: "In der Android-Version benötigt die automatische Werbeerkennung die Berechtigung für den Benachrichtigungszugriff. Der Grund ist technisch: Unter Android ist diese Berechtigung die Voraussetzung dafür, aktive Mediensitzungen über MediaSessionManager abzufragen. Es ist der einzige verfügbare Weg, und er dient ausschließlich diesem Zweck.",
+      notifText2: "Was Dampers liest, sind die Metadaten der laufenden Mediensitzung — dieselben Angaben, die das System in der Musiksteuerung auf dem Sperrbildschirm anzeigt:",
+      notifItem1: "den Titel des laufenden Stücks oder der laufenden Werbung;",
+      notifItem2: "den Namen des Interpreten, über den Streaming-Apps Werbung kennzeichnen;",
+      notifItem3: "die Länge und den Wiedergabestatus.",
+      notifText3: "Diese Angaben werden auf dem Gerät verglichen, um zu erkennen, ob gerade Werbung läuft; sie werden weder gespeichert noch irgendwohin übertragen. Die Berechtigung ist freiwillig: Ohne sie funktioniert die App mit dem Tippen von Hand, der Kachel in den Schnelleinstellungen und den Verknüpfungen. Du kannst sie jederzeit in den Android-Einstellungen widerrufen, ohne die App zu deinstallieren.",
+
+      localTitle: "Daten, die auf deinem Gerät bleiben",
+      localIntro: "Einige Informationen werden lokal auf deinem Gerät gespeichert, damit die App funktioniert:",
+      localItem1: "deine Einstellungen, etwa die gewählte Dauer und deine Playlists;",
+      localItem2: "die Audiodateien, die du importierst, und die Reihenfolge, in der du sie organisierst;",
+      localItem3: "das Protokoll der Überdeckungen (wann sie begonnen haben, wie lange sie dauerten und mit welchem Klang), nur für die Statistiken.",
+      localOutro: "Diese Daten bleiben auf dem Gerät und werden beim Deinstallieren der App entfernt. Wenn unter Android die Systemsicherung aktiviert ist, kann Android sie wie bei anderen Apps in die Sicherung deines Google-Kontos aufnehmen: Das ist ein Dienst von Google, auf den Dampers keinen Zugriff hat.",
+
+      audioTitle: "Zugriff auf Audiodateien",
+      audioText: "Wenn du eine Datei importierst, bittet das System um deine Erlaubnis und Dampers erhält nur die von dir ausgewählte Datei. Die App greift nicht auf den Rest deiner Mediathek zu.",
+
+      purchaseTitle: "Käufe",
+      purchaseText: "Dampers Pro wird über Google Play gekauft. Die Zahlung wird vollständig von Google abgewickelt: Dampers sieht und speichert deine Zahlungsdaten nicht und erhält nur die Bestätigung, dass der Kauf erfolgt ist. Wie Google deine Daten verarbeitet, steht in der " + GOOGLE_PRIVACY + "Datenschutzerklärung von Google</a>.",
+
+      thirdPartyTitle: "Dienste von Drittanbietern",
+      thirdPartyText: "Dampers verwendet keine SDKs von Drittanbietern für Analyse, Werbung oder Tracking. Der einzige externe Dienst ist Google Play, ausschließlich für die oben beschriebenen Käufe.",
+
+      minorsTitle: "Minderjährige",
+      minorsText: "Dampers ist für alle Altersgruppen geeignet. Da keine Daten erhoben werden, verarbeitet die App keine Informationen über Minderjährige.",
+
+      changesTitle: "Änderungen",
+      changesText: "Falls sich diese Datenschutzerklärung ändert, wird die aktualisierte Version auf dieser Seite mit einem neuen Aktualisierungsdatum veröffentlicht.",
+
+      contactTitle: "Kontakt",
+      contactText: "Bei Fragen zu dieser Datenschutzerklärung schreibe an",
+      updated: "Letzte Aktualisierung: 1. Oktober 2026"
+    },
+
+    fr: {
+      pageTitle: "Confidentialité · Dampers",
+      description: "Politique de confidentialité de Dampers. Aucune donnée personnelle collectée.",
+      eyebrow: "Dampers · Politique de confidentialité",
+      title: "Ce qu'on lit,<br>et ce qu'on ne lit pas.",
+      lede: "Aucun compte, aucune analyse, aucun serveur à nous. Voici en détail ce que l'application fait de vos données.",
+
+      dataTitle: "Données collectées",
+      dataStatement: "Dampers ne collecte, ne transmet et ne partage aucune donnée personnelle.",
+      dataText: "L'application ne nécessite pas de compte, n'intègre aucun outil d'analyse ou de publicité et ne communique avec aucun serveur à nous : il n'existe aucune infrastructure capable de recevoir des données provenant de cette application.",
+
+      notifTitle: "Accès aux notifications",
+      notifStatement: "Dampers ne lit pas, n'ouvre pas et n'enregistre pas le contenu de vos notifications.",
+      notifText1: "Sur la version Android, la détection automatique des publicités nécessite l'autorisation d'accès aux notifications. La raison est technique : sur Android, cette autorisation est le prérequis pour interroger les sessions multimédias actives via MediaSessionManager. C'est la seule voie disponible, et elle ne sert qu'à cela.",
+      notifText2: "Ce que Dampers lit, ce sont les métadonnées de la session multimédia en cours de lecture — les mêmes informations que le système affiche dans les commandes musicales de l'écran verrouillé :",
+      notifItem1: "le titre du morceau ou de la publicité en cours ;",
+      notifItem2: "le nom de l'artiste, que les applis de streaming utilisent pour signaler les publicités ;",
+      notifItem3: "la durée et l'état de la lecture.",
+      notifText3: "Ces données sont comparées sur l'appareil pour déterminer si une publicité est en cours ; elles ne sont ni enregistrées ni transmises où que ce soit. L'autorisation est facultative : sans elle, l'application fonctionne avec l'appui manuel, la tuile des réglages rapides et les raccourcis. Vous pouvez la révoquer à tout moment depuis les réglages d'Android, sans désinstaller l'application.",
+
+      localTitle: "Données conservées sur votre appareil",
+      localIntro: "Certaines informations sont enregistrées localement sur votre appareil afin que l'application fonctionne :",
+      localItem1: "vos préférences, comme la durée choisie et vos playlists ;",
+      localItem2: "les fichiers audio que vous choisissez d'importer et l'ordre dans lequel vous les organisez ;",
+      localItem3: "le journal des couvertures (quand elles ont commencé, combien de temps elles ont duré et avec quel son), utilisé uniquement pour les statistiques.",
+      localOutro: "Ces données restent sur l'appareil et sont supprimées lorsque vous désinstallez l'application. Sur Android, si la sauvegarde du système est activée, Android peut les inclure dans la sauvegarde de votre compte Google comme pour les autres applications : c'est un service de Google, auquel Dampers n'a pas accès.",
+
+      audioTitle: "Accès aux fichiers audio",
+      audioText: "Lorsque vous importez un fichier, le système vous demande votre autorisation et Dampers reçoit uniquement le fichier que vous avez sélectionné. L'application n'accède pas au reste de votre bibliothèque.",
+
+      purchaseTitle: "Achats",
+      purchaseText: "Dampers Pro s'achète via Google Play. Le paiement est entièrement géré par Google : Dampers ne voit ni ne conserve vos données de paiement et reçoit seulement la confirmation que l'achat a abouti. Le traitement de vos données par Google est décrit dans les " + GOOGLE_PRIVACY + "règles de confidentialité de Google</a>.",
+
+      thirdPartyTitle: "Services tiers",
+      thirdPartyText: "Dampers n'intègre aucun SDK tiers destiné à l'analyse, à la publicité ou au suivi. Le seul service externe est Google Play, uniquement pour les achats décrits ci-dessus.",
+
+      minorsTitle: "Mineurs",
+      minorsText: "Dampers convient à tous les âges. Comme aucune donnée n'est collectée, l'application ne traite aucune information concernant les mineurs.",
+
+      changesTitle: "Modifications",
+      changesText: "Si cette politique de confidentialité est modifiée, la version mise à jour sera publiée sur cette page avec une nouvelle date de révision.",
+
+      contactTitle: "Contact",
+      contactText: "Pour toute question sur cette politique, écrivez à",
+      updated: "Dernière mise à jour : 1er octobre 2026"
+    },
+
+    es: {
+      pageTitle: "Privacidad · Dampers",
+      description: "Política de privacidad de Dampers. No se recopilan datos personales.",
+      eyebrow: "Dampers · Política de privacidad",
+      title: "Qué leemos,<br>y qué no.",
+      lede: "Sin cuenta, sin analíticas, sin servidores propios. Aquí está en detalle lo que hace la app con tus datos.",
+
+      dataTitle: "Datos recopilados",
+      dataStatement: "Dampers no recopila, transmite ni comparte ningún dato personal.",
+      dataText: "La aplicación no requiere una cuenta, no incluye herramientas de análisis o publicidad y no se comunica con servidores propios: no existe ninguna infraestructura capaz de recibir datos de esta aplicación.",
+
+      notifTitle: "Acceso a las notificaciones",
+      notifStatement: "Dampers no lee, no abre ni almacena el contenido de tus notificaciones.",
+      notifText1: "En la versión de Android, la detección automática de anuncios requiere el permiso de acceso a las notificaciones. El motivo es técnico: en Android ese permiso es el requisito previo para consultar las sesiones multimedia activas mediante MediaSessionManager. Es la única vía disponible y sirve únicamente para eso.",
+      notifText2: "Lo que Dampers lee son los metadatos de la sesión multimedia en reproducción, es decir, la misma información que el sistema muestra en los controles de música de la pantalla de bloqueo:",
+      notifItem1: "el título de la canción o del anuncio en reproducción;",
+      notifItem2: "el nombre del artista, que las apps de streaming usan para declarar los anuncios publicitarios;",
+      notifItem3: "la duración y el estado de la reproducción.",
+      notifText3: "Estos datos se comparan en el dispositivo para determinar si hay un anuncio en curso, y no se guardan ni se transmiten a ninguna parte. El permiso es opcional: sin él, la app funciona con el toque manual, el recuadro de ajustes rápidos y los accesos directos. Puedes revocarlo en cualquier momento desde los ajustes de Android, sin desinstalar la app.",
+
+      localTitle: "Datos que permanecen en tu dispositivo",
+      localIntro: "Algunos datos se almacenan localmente en tu dispositivo para que la aplicación funcione:",
+      localItem1: "tus preferencias, como la duración elegida y tus listas;",
+      localItem2: "los archivos de audio que eliges importar y el orden en el que los organizas;",
+      localItem3: "el registro de coberturas (cuándo empezaron, cuánto duraron y con qué sonido), usado solo para las estadísticas.",
+      localOutro: "Estos datos permanecen en el dispositivo y se eliminan cuando desinstalas la aplicación. En Android, si tienes activada la copia de seguridad del sistema, Android puede incluirlos en la copia de tu cuenta de Google como hace con las demás apps: es un servicio de Google al que Dampers no tiene acceso.",
+
+      audioTitle: "Acceso a archivos de audio",
+      audioText: "Cuando importas un archivo, el sistema solicita tu permiso y Dampers recibe únicamente el archivo que has seleccionado. La aplicación no accede al resto de tu biblioteca.",
+
+      purchaseTitle: "Compras",
+      purchaseText: "Dampers Pro se compra a través de Google Play. El pago lo gestiona íntegramente Google: Dampers no ve ni guarda tus datos de pago y solo recibe la confirmación de que la compra se ha realizado. Cómo trata Google tus datos se explica en la " + GOOGLE_PRIVACY + "política de privacidad de Google</a>.",
+
+      thirdPartyTitle: "Servicios de terceros",
+      thirdPartyText: "Dampers no incluye SDK de terceros para análisis, publicidad o seguimiento. El único servicio externo es Google Play, solo para las compras descritas arriba.",
+
+      minorsTitle: "Menores",
+      minorsText: "Dampers es adecuada para todas las edades. Como no recopila datos, no procesa información relacionada con menores.",
+
+      changesTitle: "Cambios",
+      changesText: "Si esta política de privacidad cambia, la versión actualizada se publicará en esta página con una nueva fecha de revisión.",
+
+      contactTitle: "Contacto",
+      contactText: "Para dudas sobre esta política, escribe a",
+      updated: "Última actualización: 1 de octubre de 2026"
+    },
+
+    pt: {
+      pageTitle: "Privacidade · Dampers",
+      description: "Política de privacidade da Dampers. Nenhum dado pessoal é recolhido.",
+      eyebrow: "Dampers · Política de privacidade",
+      title: "O que lemos,<br>e o que não.",
+      lede: "Sem conta, sem análises, sem servidores nossos. Aqui está em detalhe o que a app faz com os teus dados.",
+
+      dataTitle: "Dados recolhidos",
+      dataStatement: "A Dampers não recolhe, transmite nem partilha quaisquer dados pessoais.",
+      dataText: "A aplicação não requer uma conta, não inclui ferramentas de análise ou publicidade e não comunica com servidores nossos: não existe qualquer infraestrutura capaz de receber dados desta aplicação.",
+
+      notifTitle: "Acesso às notificações",
+      notifStatement: "A Dampers não lê, não abre nem guarda o conteúdo das tuas notificações.",
+      notifText1: "Na versão Android, a deteção automática de publicidade requer a permissão de acesso às notificações. A razão é técnica: no Android essa permissão é o pré-requisito para consultar as sessões multimédia ativas através do MediaSessionManager. É a única via disponível e serve apenas para isso.",
+      notifText2: "O que a Dampers lê são os metadados da sessão multimédia em reprodução, ou seja, as mesmas informações que o sistema mostra nos controlos de música do ecrã de bloqueio:",
+      notifItem1: "o título da faixa ou do anúncio em reprodução;",
+      notifItem2: "o nome do artista, que as apps de streaming usam para declarar os anúncios publicitários;",
+      notifItem3: "a duração e o estado da reprodução.",
+      notifText3: "Estes dados são comparados no dispositivo para perceber se está a decorrer publicidade, e não são guardados nem transmitidos para lado nenhum. A permissão é facultativa: sem ela, a app funciona com o toque manual, o mosaico das definições rápidas e os atalhos. Podes revogá-la a qualquer momento nas definições do Android, sem desinstalar a app.",
+
+      localTitle: "Dados que permanecem no dispositivo",
+      localIntro: "Algumas informações são guardadas localmente no teu dispositivo para que a aplicação funcione:",
+      localItem1: "as tuas preferências, como a duração escolhida e as tuas playlists;",
+      localItem2: "os ficheiros de áudio que escolhes importar e a ordem em que os organizas;",
+      localItem3: "o registo das coberturas (quando começaram, quanto duraram e com que som), usado apenas para as estatísticas.",
+      localOutro: "Estes dados permanecem no dispositivo e são removidos quando desinstalas a aplicação. No Android, se tiveres a cópia de segurança do sistema ativada, o Android pode incluí-los na cópia da tua conta Google, tal como faz com as outras apps: é um serviço da Google, ao qual a Dampers não tem acesso.",
+
+      audioTitle: "Acesso aos ficheiros de áudio",
+      audioText: "Quando importas um ficheiro, o sistema pede a tua autorização e a Dampers recebe apenas o ficheiro que selecionaste. A aplicação não acede ao resto da tua biblioteca.",
+
+      purchaseTitle: "Compras",
+      purchaseText: "A Dampers Pro compra-se através do Google Play. O pagamento é gerido inteiramente pela Google: a Dampers não vê nem guarda os teus dados de pagamento e recebe apenas a confirmação de que a compra foi feita. A forma como a Google trata os teus dados está descrita na " + GOOGLE_PRIVACY + "política de privacidade da Google</a>.",
+
+      thirdPartyTitle: "Serviços de terceiros",
+      thirdPartyText: "A Dampers não inclui SDKs de terceiros para análise, publicidade ou rastreamento. O único serviço externo é o Google Play, apenas para as compras descritas acima.",
+
+      minorsTitle: "Menores",
+      minorsText: "A Dampers é adequada para todas as idades. Como não recolhe dados, não processa informações relativas a menores.",
+
+      changesTitle: "Alterações",
+      changesText: "Se esta política de privacidade for alterada, a versão atualizada será publicada nesta página com uma nova data de revisão.",
+
+      contactTitle: "Contacto",
+      contactText: "Para dúvidas sobre esta política, escreve para",
+      updated: "Última atualização: 1 de outubro de 2026"
+    }
+  };
+</script>
+<script src="site.js"></script>
+
+</body>
+</html>
